@@ -22,7 +22,7 @@ import login from './pages/login';
 import signup from './pages/signup';
 import axios from 'axios';
 
-const theme = createMuiTheme(themeFile);
+//const theme = createMuiTheme(themeFile);
 
 const token = localStorage.FBIdToken;
 if (token) {
@@ -39,7 +39,7 @@ if (token) {
 
 function App() {
   return (
-    <MuiThemeProvider theme = {theme}>
+    //<MuiThemeProvider theme = {theme}>
     <Provider store = {store}>
       <Router>
         <Navbar />
@@ -52,7 +52,7 @@ function App() {
         </div>
       </Router>
     </Provider>
-    </MuiThemeProvider>
+    //</MuiThemeProvider>
   );
 }
 
