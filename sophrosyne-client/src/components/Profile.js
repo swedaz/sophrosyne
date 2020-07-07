@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Link } from 'react-router-dom';
-//import dayjs from 'dayjs'
+import dayjs from 'dayjs'
 
 import Button from '@material-ui/core/Button'
 import MuiLink from '@material-ui/core/Link'
 import Typography from '@material-ui/core/Typography'
-//import CalendarToday from '@material-ui/icons/CalendarToday';
+import CalendarToday from '@material-ui/icons/CalendarToday';
 
 import { connect } from 'react-redux';
 import profile from '../pages/profile';
@@ -84,6 +84,9 @@ export class Profile extends Component {
                 </MuiLink>
                 <hr/>
                 {bio && <Typography variant = "body2">{bio}</Typography>}
+                <hr/>
+                <CalendarToday color = "primary"/>{' '}
+            <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
                         </div>
                     </div>
                 </Paper>
