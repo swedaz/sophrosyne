@@ -20,6 +20,7 @@ import AuthRoute from './util/AuthRoute'
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
+import profile from './pages/profile';
 import axios from 'axios';
 
 //const theme = createMuiTheme(themeFile);

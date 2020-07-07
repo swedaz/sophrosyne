@@ -6,8 +6,7 @@ let db = {
         handle: 'user',
         createdAt: '2019-03-15T10:59:52.798Z',
         imageUrl: 'image/dsfsdkfghskdfgs/dgfdhfgdh',
-        bio: 'Hello, my name is user, nice to meet you',
-        interests: ['', '', '']
+        bio: 'Hello, my name is user, nice to meet you'
       }
     ]
   };
@@ -20,7 +19,16 @@ let db = {
       handle: 'user',
       createdAt: '2019-03-15T10:59:52.798Z',
       imageUrl: 'image/dsfsdkfghskdfgs/dgfdhfgdh',
-      bio: 'Hello, my name is user, nice to meet you',
-      interests: ['', '', '']
-    }
+      bio: 'Hello, my name is user, nice to meet you'
+    },
+    likes: [
+      {
+        userHandle: 'user',
+        //screamId: 'hh7O5oWfWucVzGbHH2pa'
+      },
+      {
+        userHandle: 'user',
+        //screamId: '3IOnFoQexRcofs5OhBXO'
+      }
+    ]
   };

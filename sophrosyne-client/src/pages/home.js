@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import Grid from '@material-ui/core/Grid'
+
+import Profile from '../components/Profile'
 
 export class home extends Component {
     render() {
         return (
-            <div>
-                <h1>HomePage</h1> 
-            </div>
+            <Grid container spacing = {16}>
+                <Profile />
+            </Grid>
         )
     }
 }
