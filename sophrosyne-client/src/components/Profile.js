@@ -15,7 +15,7 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = {
     paper: {
-        padding: 10
+        padding: 20
       },
       profile: {
         '& .image-wrapper': {
