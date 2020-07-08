@@ -15,7 +15,7 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = {
     paper: {
-        padding: 20
+        padding: 10
       },
       profile: {
         '& .image-wrapper': {
@@ -75,7 +75,7 @@ export class Profile extends Component {
                 <Paper className = {classes.paper}>
                     <div className = {classes.profile}>
                         <div className = "profile-image">
-                            <img scr = {imageUrl} alt = "profile" className = "profile-image"/>
+                            <img src = {imageUrl} alt = "profile" className = "profile-image"/>
                         </div>
                         <hr/>
                         <div className = "profile-details">

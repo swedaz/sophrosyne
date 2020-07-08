@@ -20,10 +20,11 @@ import AuthRoute from './util/AuthRoute'
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
+import aboutUs from './pages/aboutUs';
 import profile from './pages/profile';
 import axios from 'axios';
 
-//const theme = createMuiTheme(themeFile);
+const theme = createMuiTheme(themeFile);
 
 const token = localStorage.FBIdToken;
 if (token) {
@@ -40,20 +41,21 @@ if (token) {
 
 function App() {
   return (
-    //<MuiThemeProvider theme = {theme}>
+    <MuiThemeProvider theme = {theme}>
     <Provider store = {store}>
       <Router>
         <Navbar />
         <div className = "container">
         <Switch>
           <Route exact path = "/home" component = {home}/>
+          <Route exact path = "/aboutUs" component = {aboutUs}/>
           <AuthRoute exact path = "/login" component = {login} />
           <AuthRoute exact path = "/signup" component = {signup} />
         </Switch>
         </div>
       </Router>
     </Provider>
-    //</MuiThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

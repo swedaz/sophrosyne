@@ -162,7 +162,8 @@ exports.uploadImage = (req, res) => {
         resumable: false,
         metadata: {
           metadata: {
-            contentType: imageToBeUploaded.mimetype
+            contentType: imageToBeUploaded.mimetype,
+            //firebaseStorageDownloadTokens: generatedToken
           },
         },
       })

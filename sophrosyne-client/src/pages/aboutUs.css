@@ -1,0 +1,11 @@
+.aboutUs {
+    background-image: linear-gradient(to bottom right, red, yellow);
+    position: absolute;
+    width: 2596px;
+    height: 850px;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+}
+
+
