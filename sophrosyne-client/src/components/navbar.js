@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button'
 class navbar extends Component {
     render() {
         return (
-            <AppBar className = "appBar-container">
+            <AppBar className = "appBar-container" style={{backgroundColor: '#E5E5E5'}}>
                 <ToolBar className = "nav-container">
                     <Button color = "inherit" component = {Link} to = "/aboutUs">About Us</Button>
                     <Button color = "inherit" component = {Link} to = "/home">Home</Button>

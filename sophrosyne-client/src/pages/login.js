@@ -75,12 +75,12 @@ class login extends Component {
     return (
       <Grid container
       direction="row"
-      justify="center"
       alignItems="center"
+      id= 'loginSide'
+      spacing = {10}
       className={classes.form}>
-        <Grid item sm />
-        <Grid item sm>
-          <Typography variant="h2" id= 'loginSide' className={classes.pageTitle}>
+        <Grid item sm >
+          <Typography variant="h2" className={classes.pageTitle}>
             Log into your account
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
@@ -131,7 +131,11 @@ class login extends Component {
             </small>
           </form>
         </Grid>
-        <Grid item sm />
+        <Grid item sm id= "welcomeBlock" alignItems= 'center'>
+          <Typography variant="h1" id= "WelcomeMessage" className={classes.pageTitle}>
+              Welcome!
+          </Typography>
+        </Grid>
       </Grid>
     );
   }

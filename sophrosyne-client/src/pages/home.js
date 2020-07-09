@@ -9,8 +9,12 @@ export class home extends Component {
     render() {
         return (
             <div>
-                <Grid container spacing = {10} flex-direction = 'row'>
-                    <Grid item xs = {20}>
+                <Grid container
+                justify= "center"
+                spacing = {10} 
+                flex-direction = 'row' 
+                style={{marginTop :'10%'}}>
+                    <Grid item xs = {6}>
                         <Profile />
                     </Grid>
                 </Grid>

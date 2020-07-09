@@ -42,21 +42,23 @@ if (token) {
 
 function App() {
   return (
-    <MuiThemeProvider theme = {theme}>
-    <Provider store = {store}>
-      <Router>
-        <Navbar />
-        <div className = "container">
-        <Switch>
-          <Route exact path = "/home" component = {home}/>
-          <Route exact path = "/aboutUs" component = {aboutUs}/>
-          <AuthRoute exact path = "/login" component = {login} />
-          <AuthRoute exact path = "/signup" component = {signup} />
-        </Switch>
-        </div>
-      </Router>
-    </Provider>
-    </MuiThemeProvider>
+    <div className= "App">
+      <MuiThemeProvider theme = {theme}>
+      <Provider store = {store}>
+        <Router>
+          <Navbar/>
+          <div className = "container">
+          <Switch>
+            <Route exact path = "/home" component = {home}/>
+            <Route exact path = "/aboutUs" component = {aboutUs}/>
+            <AuthRoute exact path = "/login" component = {login} />
+            <AuthRoute exact path = "/signup" component = {signup} />
+          </Switch>
+          </div>
+        </Router>
+      </Provider>
+      </MuiThemeProvider>
+    </div>
   );
 }
 

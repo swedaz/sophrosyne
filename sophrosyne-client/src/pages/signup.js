@@ -81,7 +81,9 @@ class signup extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form}>
+      <Grid container 
+      className={classes.form}
+      style={{marginTop :'10%'}}>
         <Grid item sm />
         <Grid item sm>
           <Typography variant="h2" className={classes.pageTitle}>
