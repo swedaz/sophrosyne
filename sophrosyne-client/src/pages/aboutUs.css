@@ -3,6 +3,7 @@ html,body{
     
 }
 .aboutUs {
+    background-image: linear-gradient(to bottom right, red, yellow);
     position: absolute;
     width: 2596px;
     height: 850px;
