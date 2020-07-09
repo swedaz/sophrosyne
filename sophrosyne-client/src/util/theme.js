@@ -14,28 +14,33 @@ export default {
         },
         background: '#E5E5E5'
     },
-    typography: {
-        useNextVariants: true
-    },
-    form : {
-        textAlign: 'center'
-    },
-    pageTitle: {
-        margin: '10px auto 10px auto'
-    },
-    textField: {
-        margin: '10px auto 10px auto'
-    },
-    button: {
-        marginTop: 20,
-        position: 'relative'
-    },
-    customError: {
-        color: 'red',
-        fontSize: '0.8rem',
-        marginTop: 10
-    },
-    progress: {
-        position: 'absolute'
+
+    spreadThis: {
+        typography: {
+            useNextVariants: true
+        },
+        form : {
+            textAlign: 'center'
+        },
+        pageTitle: {
+            margin: '10px auto 10px auto'
+        },
+        textField: {
+            margin: '10px auto 10px auto'
+        },
+        button: {
+            marginTop: 20,
+            position: 'relative'
+        },
+        customError: {
+            color: 'red',
+            fontSize: '0.8rem',
+            marginTop: 10
+        },
+        progress: {
+            position: 'absolute'
+        }
     }
-}
+
+    }
+    
