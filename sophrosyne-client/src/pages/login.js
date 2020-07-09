@@ -3,6 +3,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import dayjs from 'dayjs';
+import loginSide from './login.css';
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
@@ -72,11 +73,15 @@ class login extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form}>
+      <Grid container
+      direction="row"
+      justify="center"
+      alignItems="center"
+      className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <Typography variant="h2" className={classes.pageTitle}>
-            Login
+          <Typography variant="h2" id= 'loginSide' className={classes.pageTitle}>
+            Log into your account
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField

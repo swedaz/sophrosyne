@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+#loginSide {
+    position: flex;
+    width: 521px;
+    height: 72px;
+    left: 161px;
+    top: 338px;
+    
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 72px;
+    
+    text-align: center;
+    
+    color: rgba(0, 0, 0, 0.74);
+}
+#email {
+    position: flex;
+    width: 155px;
+    height: 36.78px;
+    left: 339px;
+    top: 479.52px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.6);
+}
