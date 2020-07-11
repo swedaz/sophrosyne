@@ -47,8 +47,6 @@ class EditDetails extends Component{
     componentDidMount(){
         const {credentials} = this.props;
         this.mapUserDetailsToState(credentials);
-
-        
     }
     
 

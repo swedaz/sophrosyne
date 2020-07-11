@@ -1,0 +1,94 @@
+.survey {
+    background: linear-gradient(180deg, rgba(246, 245, 245, 0) 0%, rgba(255, 115, 63, 0.24) 100%);
+    position: absolute;
+    width: 2596px;
+    height: 850px;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+
+}
+
+.genderButton {
+    background-color: 	rgba(253, 206, 0, 0.7);
+    border: none;
+    width: 200px;
+    height: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: Poppins;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+    display: block;
+}
+
+
+
+.buttonFalse {
+    background-color: 	rgba(253, 206, 0, 0.7);
+    border: none;
+    width: 200px;
+    height: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: Poppins;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+    display: block;
+}
+
+
+.buttonTrue {
+    background-color: #FF723F;
+    border: none;
+    width: 200px;
+    height: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: Poppins;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+    display: block;
+}
+
+.SubmitButton {
+    background-color: #FF723F;
+    border: none;
+    width: 200px;
+    height: 100px;
+    color: white;
+    font-size: 30px;
+    font-family: Poppins;
+    align-items: center;
+    border-radius: 50%;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle; 
+    display: inline-block;
+}
+
+
+
+.rowC{display:flex; flex-direction:row; margin: 100px}
+
+.text{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: justify; 
+}
+
+.Gender{
+    max-width: 400px
+}
+
+.Identity{
+    max-width: 400px
+}
