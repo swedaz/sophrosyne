@@ -5,7 +5,7 @@ body{
     sans-serif;
   min-height: 100%;
   min-width: 100%;
-  background-color: #E5E5E5;
+  /* background-color: #E5E5E5; */
 }
 .container {
   /* margin: 80px auto 0 auto;
@@ -13,10 +13,14 @@ body{
 }
 .nav-container{
   margin: auto;
-  background-color: #E5E5E5;
+  background-color: #F6F5F5;
   color: black;
+  justify-content: space-around;
 }
 .appBar-container{
   /* color: orange; */
   border-bottom: solid 5px #FF723F;
+}
+#logo{
+  float: left;
 }

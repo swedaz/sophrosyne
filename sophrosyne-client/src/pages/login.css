@@ -5,6 +5,7 @@ html,body{
     height: fit-content;
     margin: 0;
     padding: 0; */
+    /* background-color: #E5E5E5; */
     
 }
 
@@ -19,9 +20,9 @@ html,body{
     /* align-items: center; */
     /* flex-direction: row; */
     margin: 0;
-    padding: 5%;
+    /* padding: 5%; */
     
-    background-color: #E5E5E5;
+    background-color: #f6f5f5;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -39,18 +40,24 @@ html,body{
     text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
     height: 100%;
     margin: 0 auto;
-    display: flex;
+    display: flex; 
 
-    
 }
 #WelcomeMessage{
     /* margin-top: 50%; */
     /* margin: 0 auto; */
 }
+
 #email {
  border: solid #FF723F 2px;
 }
 
 #password {
+    border: solid #FF723F 2px;
+}
+#confirmPassword {
+    border: solid #FF723F 2px;
+}
+#handle {
     border: solid #FF723F 2px;
 }

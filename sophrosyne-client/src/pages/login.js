@@ -131,9 +131,19 @@ class login extends Component {
             </small>
           </form>
         </Grid>
-        <Grid item sm id= "welcomeBlock" alignItems= 'center'>
+        <Grid item sm id= "welcomeBlock"
+        display= 'flex'
+        direction= 'column'
+        justify='center'
+        alignItems= 'center'>
           <Typography variant="h1" id= "WelcomeMessage" className={classes.pageTitle}>
               Welcome!
+          </Typography>
+          <Typography variant="h2" 
+            id= "InfoMessage" 
+            style ={{fontSize: '35px'}} 
+            className={classes.pageTitle}>
+              Learn more about us and our journey by going to our About page
           </Typography>
         </Grid>
       </Grid>
