@@ -8,6 +8,8 @@ var selectedIdentity = [];
 
 
 class Identity extends Component {
+    
+
 
     constructor(props) {
         super(props);
@@ -16,65 +18,77 @@ class Identity extends Component {
             button2: false,
             button3: false,
             button4: false,
+            selectedIdentity: ""
         }
     }
+    
 
+    getSelections() {
+        let selections = []
+        if(this.state.button1){
+            selections.push("BIPOC")
+        }
+        if(this.state.button2){
+            selections.push("LGBTQ+")
+        }
+        if(this.state.button3){
+            selections.push("International Student")
+        }
+        if(this.state.button4){
+            selections.push("Anyone")
+        }
+        return selections
+    }
+
+    toggleIdentity(identity){
+        if(this.props.identities.includes(identity)){
+            let newIdentities = this.props.identities.filter(g => g != identity) 
+            this.props.onUpdateIdentity(newIdentities)
+        }else{
+            console.log(this.props.identities)
+            let newIdentities = this.props.identities.concat([identity])
+            this.props.onUpdateIdentity(newIdentities)
+            console.log(newIdentities)
+            
+        }
+        
+    }
 
     handleClick1 = () => {
-        this.setState({button1: !this.state.button1})
-        if(!this.state.button1){
-            selectedIdentity.push("POC")
-            
-           
-        }
-        //console.log(this.state.selectedIdentity)
-        console.log(selectedIdentity)
+        this.toggleIdentity("BIPOC")
+        
     }
 
+
     handleClick2 = () => {
-        this.setState({button2: !this.state.button2})
-        if(!this.state.button2){
-            selectedIdentity.push("LGBTQ+")
-        }
-        //console.log(this.state.selectedIdentity)
-        console.log(selectedIdentity)
-        
+        this.toggleIdentity("LGBTQ+")
        
     }
     handleClick3 = () => {
-        this.setState({button3: !this.state.button3})
-        if(!this.state.button3){
-            selectedIdentity.push("International Student")
-        }
-        //console.log(this.state.selectedIdentity)
-        console.log(selectedIdentity)
+        this.toggleIdentity("International Student")
     }
 
+
     handleClick4 = () => {
-        this.setState({button4: !this.state.button4})
-        if(!this.state.button4){
-            selectedIdentity.push("Anyone :)")
-        } 
-        //console.log(this.state.selectedIdentity)
-        console.log(selectedIdentity)
+        this.toggleIdentity("Anyone")
     }
 
     render() {
-        let btn_class1 = this.state.button1 ? "buttonTrue" : "buttonFalse";
-        let btn_class2 = this.state.button2 ? "buttonTrue" : "buttonFalse";
-        let btn_class3 = this.state.button3 ? "buttonTrue" : "buttonFalse";
-        let btn_class4 = this.state.button4 ? "buttonTrue" : "buttonFalse";
+        let btn_class1 = this.props.identities.includes("BIPOC") ? "buttonTrue" : "buttonFalse";
+        let btn_class2 = this.props.identities.includes("LGBTQ+") ? "buttonTrue" : "buttonFalse";
+        let btn_class3 = this.props.identities.includes("International Student") ? "buttonTrue" : "buttonFalse";
+        let btn_class4 = this.props.identities.includes("Anyone") ? "buttonTrue" : "buttonFalse";
 
         return (
             <div >
                 <div>
                     <div>
-                    <Container className = 'Identity'>
+                    <Container className = 'identity'>
                     <h2 className = 'text'>Select an identity: </h2>
-                    <Button class = {btn_class1} key = "POC" onClick={this.handleClick1.bind(this)} >POC</Button>
+                    <Button class = {btn_class1} key = "BIPOC" onClick={this.handleClick1.bind(this)} >BIPOC</Button>
                     <Button class = {btn_class2}  key = "LGBTQ+" onClick={this.handleClick2.bind(this)}>LGBTQ+</Button>
                     <Button class = {btn_class3} key = "International Student" onClick={this.handleClick3.bind(this)}>International Student</Button>
-                    <Button class = {btn_class4} key = "Anyone :)" onClick={this.handleClick4.bind(this)} >Anyone :)</Button>        
+                    <Button class = {btn_class4} key = "Anyone" onClick={this.handleClick4.bind(this)} >Anyone</Button>        
                     </Container>
                     </div>
                 </div>

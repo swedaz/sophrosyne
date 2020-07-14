@@ -54,7 +54,7 @@ function App() {
             <Route exact path = "/aboutUs" component = {aboutUs}/>
             <AuthRoute exact path = "/login" component = {login} />
             <AuthRoute exact path = "/signup" component = {signup} />
-            <Route exact path = "/survey" component = {survey} />
+            <Route exact path = "/home/survey" component = {survey} />
           </Switch>
           </div>
         </Router>

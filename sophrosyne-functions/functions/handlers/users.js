@@ -108,6 +108,12 @@ exports.addUserDetails = (req, res) => {
       });
   };
 
+exports.addSurveyDetails = (req, res) => {
+  console.log("In addsurveydetails")
+  return res.send({message: "Hello World"});
+
+}
+
 exports.getAuthenticatedUser = (req, res) => {
     let userData = {};
     db.doc(`/users/${req.user.handle}`).get()
