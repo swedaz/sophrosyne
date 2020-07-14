@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import signupSide from './signup.css';
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
@@ -81,13 +82,15 @@ class signup extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container 
-      className={classes.form}
-      style={{marginTop :'10%'}}>
-        <Grid item sm />
-        <Grid item sm>
+      <Grid container
+      direction="row"
+      alignItems="center"
+      id= 'signupSide'
+      spacing = {10}
+      className={classes.form}>
+        <Grid item sm = {6}>
           <Typography variant="h2" className={classes.pageTitle}>
-            SignUp
+            Hello, Friend!
           </Typography>
           <form noValidate onSubmit={this.handleSubmit}>
             <TextField
@@ -161,7 +164,16 @@ class signup extends Component {
             </small>
           </form>
         </Grid>
-        <Grid item sm />
+        <Grid item sm
+        id = 'SignupSecond'
+        display= 'flex'
+        direction= 'column'
+        justify= 'center'
+        alignItems= 'center'>
+          <Typography varient= 'h2' className={classes.pageTitle}>
+                Pictures are optional
+          </Typography>
+        </Grid>
       </Grid>
     );
   }

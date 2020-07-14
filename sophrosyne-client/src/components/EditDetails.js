@@ -77,6 +77,8 @@ class EditDetails extends Component{
             open={this.state.open}
             onClose={this.handleClose}
             fullWidth
+            style={{backgroundColor: 'white', boxShadow:'none'}}
+            overlayStyle={{backgroundColor: 'transparent'}}
             maxWidth='sm'>
                 <DialogTitle>Edit your details</DialogTitle>
                 <DialogContent>
