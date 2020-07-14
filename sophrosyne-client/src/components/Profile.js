@@ -16,6 +16,7 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 
 import { connect } from 'react-redux';
 import { logoutUser, uploadImage } from '../redux/actions/userActions';
+import Survey from '../pages/survey'
 
 //import profile from '../pages/profile';
 import Paper from '@material-ui/core/Paper';
@@ -127,6 +128,7 @@ class Profile extends Component {
                         </Tooltip>
                         <EditDetails/>
                     </div>
+                    <Button color = "inherit" component = {Link} to = "/home/survey">Survey</Button>
                 </Paper>
         ) : (
                 <Paper className = {classes.paper}>

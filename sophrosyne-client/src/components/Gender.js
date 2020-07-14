@@ -7,6 +7,7 @@ import Container from '@material-ui/core/Container'
 var selectedGender = [];
 
 
+
 class Gender extends Component {
     
 
@@ -18,68 +19,102 @@ class Gender extends Component {
             button2: false,
             button3: false,
             button4: false,
-            //selectedGender: ""
+            selectedGender: ""
         }
     }
     
 
-   
-
-
-
-    handleClick1 = () => {
-        this.setState({button1: !this.state.button1})
-        if(!this.state.button1){
-            selectedGender.push("She/her")
-            
-            /*this.setState(function(state, selectedGender){
-                return{
-                    selectedGender: "Woman"
-                };
-            });*/
+    getSelections() {
+        let selections = []
+        if(this.state.button1){
+            selections.push("She/her")
         }
-        //console.log(this.state.selectedGender)
-        console.log(selectedGender)
+        if(this.state.button2){
+            selections.push("He/him")
+        }
+        if(this.state.button3){
+            selections.push("They/them")
+        }
+        if(this.state.button4){
+            selections.push("Other")
+        }
+        return selections
     }
 
-    handleClick2 = () => {
-        this.setState({button2: !this.state.button2})
-        if(!this.state.button2){
-            selectedGender.push("He/him")
-            /*this.setState(function(state, selectedGender){
-                return{
-                    selectedGender: "Man"
-                };
-            });*/
+    toggleGender(gender){
+        if(this.props.genders.includes(gender)){
+            let newGenders = this.props.genders.filter(g => g != gender) 
+            this.props.onUpdateGender(newGenders)
+        }else{
+            console.log(this.props.genders)
+            let newGenders = this.props.genders.concat([gender])
+            this.props.onUpdateGender(newGenders)
+            console.log(newGenders)
+            
         }
+        
+    }
+
+    handleClick1 = () => {
+        this.toggleGender("She/her")
+        //this.setState({button1: !this.state.button1})
+        // if(this.props.genders.includes("She/her")){
+        //     this.props.genders.filter(g => g != "She/her") 
+        // }
+        // this.props.onUpdateGender([])
+        
+    }
+
+
+    handleClick2 = () => {
+        this.toggleGender("He/him")
+        //this.setState({button2: !this.state.button2})
+
+        // this.setState({button2: !this.state.button2})
+        // if(!this.state.button2){
+        //     selectedGender.push("He/him")
+        //     this.setState(function(state, selectedGender){
+        //         return{
+        //             selectedGender: "Man"
+        //         };
+        //     });
+        // }
         //console.log(this.state.selectedGender)
-        console.log(selectedGender)
+        //console.log(selectedGender)
         
        
     }
     handleClick3 = () => {
-        this.setState({button3: !this.state.button3})
-        if(!this.state.button3){
-            selectedGender.push("They/them")
-        }
-        //console.log(this.state.selectedGender)
-        console.log(selectedGender)
+        //this.setState({button3: !this.state.button3})
+        this.toggleGender("They/them")
+
+        // this.setState({button3: !this.state.button3})
+        // if(!this.state.button3){
+        //     selectedGender.push("They/them")
+        // }
+        // //console.log(this.state.selectedGender)
+        // console.log(selectedGender)
     }
 
+
     handleClick4 = () => {
-        this.setState({button4: !this.state.button4})
-        if(!this.state.button4){
-            selectedGender.push("Other")
-        } 
-        //console.log(this.state.selectedGender)
-        console.log(selectedGender)
+        //this.setState({button4: !this.state.button4})
+        this.toggleGender("Other")
+
+        // this.setState({button4: !this.state.button4})
+        // if(!this.state.button4){
+        //     selectedGender.push("Other")
+        // } 
+        // //console.log(this.state.selectedGender)
+        // console.log(selectedGender)
     }
 
     render() {
-        let btn_class1 = this.state.button1 ? "buttonTrue" : "buttonFalse";
-        let btn_class2 = this.state.button2 ? "buttonTrue" : "buttonFalse";
-        let btn_class3 = this.state.button3 ? "buttonTrue" : "buttonFalse";
-        let btn_class4 = this.state.button4 ? "buttonTrue" : "buttonFalse";
+        //let btn_class1 = this.state.button1 ? "buttonTrue" : "buttonFalse";
+        let btn_class1 = this.props.genders.includes("She/her") ? "buttonTrue" : "buttonFalse";
+        let btn_class2 = this.props.genders.includes("He/him") ? "buttonTrue" : "buttonFalse";
+        let btn_class3 = this.props.genders.includes("They/them") ? "buttonTrue" : "buttonFalse";
+        let btn_class4 = this.props.genders.includes("Other") ? "buttonTrue" : "buttonFalse";
 
         return (
             <div >

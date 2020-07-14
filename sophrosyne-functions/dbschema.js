@@ -6,7 +6,9 @@ let db = {
         handle: 'user',
         createdAt: '2019-03-15T10:59:52.798Z',
         imageUrl: 'image/dsfsdkfghskdfgs/dgfdhfgdh',
-        bio: 'Hello, my name is user, nice to meet you'
+        bio: 'Hello, my name is user, nice to meet you',
+        Identity: 'Anyone',
+        Gender: "Other"
       }
     ]
   };
@@ -19,7 +21,9 @@ let db = {
       handle: 'user',
       createdAt: '2019-03-15T10:59:52.798Z',
       imageUrl: 'image/dsfsdkfghskdfgs/dgfdhfgdh',
-      bio: 'Hello, my name is user, nice to meet you'
+      bio: 'Hello, my name is user, nice to meet you',
+      Identity: 'Anyone',
+      Gender: 'Other'
     },
     likes: [
       {
