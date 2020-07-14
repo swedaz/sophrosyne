@@ -109,8 +109,15 @@ exports.addUserDetails = (req, res) => {
   };
 
 exports.addSurveyDetails = (req, res) => {
-  console.log("In addsurveydetails")
-  return res.send({message: "Hello World"});
+  db.doc(`/users/${req.user.handle}`)
+      .update(req.body)
+      .then(() => {
+        return res.json({ message: "Details added successfully" });
+      })
+      .catch((err) => {
+        console.error(err);
+        return res.status(500).json({ error: err.code });
+      });
 
 }
 

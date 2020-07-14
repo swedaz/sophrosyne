@@ -33,7 +33,7 @@ class survey extends Component {
     
     handleSubmit(){
         //let results = {genders: this.state.genders, id: []}
-        let results = {genders: this.state.genders, identitities: this.state.identities, id: []}
+        let results = {genders: this.state.genders, identitities: this.state.identities}
         console.log(this.props)
         this.props.surveySubmit(results)
 

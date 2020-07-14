@@ -10,11 +10,12 @@ const { signup, login, uploadImage, addUserDetails, addSurveyDetails, getAuthent
 app.post('/signup', signup);
 app.post('/login', login);
 app.post('/user/image', FBAuth, uploadImage)
-app.get('/user/survey', addSurveyDetails)
+app.post('/user/survey', FBAuth, addSurveyDetails)
 
 // Add user details
 app.post('/user', FBAuth, addUserDetails);
 app.get('/user', FBAuth, getAuthenticatedUser);
+console.log("Hello")
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
