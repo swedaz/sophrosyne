@@ -1,0 +1,23 @@
+#signupSide {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #f6f5f5;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    /* font-size: 30px; */
+    line-height: 72px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.74);
+    overflow: hidden;
+}
+#SignupSecond{
+    border-left: solid 5px #FF723F;
+    height: 100%;
+    padding-top: 10%;
+    margin-top: 10%; 
+    background-image: linear-gradient(to bottom ,rgba(246, 245, 245, 0.1) 0%, rgba(255, 114, 63, 0.2) 100%);
+
+}
