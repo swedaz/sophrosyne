@@ -198,3 +198,58 @@ exports.uploadImage = (req, res) => {
 
 
 
+
+// exports.getBIPOCusers = (req, res) => {
+//   db.doc(`/users/${req.user.handle}`).get()
+//     .then((me) => {
+//       if(me.exists) {
+//         let ids = me.data().identities
+//       }else{
+
+//       }
+//       db.collection("users").where('identities','array-contains', 'BIPOC' ).get()
+//       .then((BIPOCusers) => {
+//         if(BIPOCusers.docs.length === 0){
+//           res.json({message: "No results", results: []})
+//         }else{
+//           res.json({results:[BIPOCusers.docs[0].id]})
+//         }
+        
+      
+//       })
+//     })
+// }
+
+exports.getUsers = (req, res) => {
+  //db.doc(`/users/${req.user.handle}`).get()
+    // .then((me) => {
+    //   if(me.exists) {
+    //     let ids = me.data().identities
+    //     console.log(ids)
+    //   }else{
+    //     res.json({message: "No id found"})
+    //   }
+
+      db.collection("users").where('identities','array-contains', 'BIPOC' ).get()
+      .then((BIPOCusers) => {
+        if(BIPOCusers.docs.length === 0){
+          res.json({message: "No results", results: []})
+        }else{
+          //res.json({message: "BIPOC"})
+          res.json({results:[BIPOCusers.docs[0].id]})
+        }
+      })
+      
+
+      db.collection("users").wheres('identities','array-contains', 'LGBTQ+' ).get()
+      .then((LGBTQusers) => {
+        if(LGBTQusers.docs.length === 0){
+          res.json({message: "No results", results: []})
+        }else{
+          //res.json({message: "LGBTQ+"})
+          res.json({results:[LGBTQusers.docs[0].id]})
+        }
+        
+      
+      })
+    }
