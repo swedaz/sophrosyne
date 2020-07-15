@@ -6,10 +6,10 @@
     left: 0px;
     right: 0px;
     top: 20px;
-
+    overflow: hidden;
 }
 
-.genderButton {
+/* .genderButton {
     background-color: 	rgba(253, 206, 0, 0.7);
     border: none;
     width: 200px;
@@ -21,58 +21,63 @@
     border-radius: 50%;
     margin: 5px;
     display: block;
-}
+} */
 
 
 
 .buttonFalse {
+    width: 250px;
+    height: 80px;
+    border-radius: 50px;
     background-color: 	rgba(253, 206, 0, 0.7);
     border: none;
-    width: 200px;
-    height: 100px;
     color: white;
     font-size: 30px;
     font-family: Poppins;
     align-items: center;
-    border-radius: 50%;
-    margin: 5px;
+    margin: 30px;
     display: block;
 }
 
 
 .buttonTrue {
+    width: 250px;
+    height: 80px;
+    border-radius: 50px;
     background-color: #FF723F;
     border: none;
-    width: 200px;
-    height: 100px;
     color: white;
     font-size: 30px;
     font-family: Poppins;
     align-items: center;
-    border-radius: 50%;
-    margin: 5px;
+    margin: 30px;
     display: block;
 }
 
 .SubmitButton {
+    width: 250px;
+    height: 80px;
+    border-radius: 50px;
     background-color: #FF723F;
     border: none;
-    width: 200px;
-    height: 100px;
     color: white;
     font-size: 30px;
     font-family: Poppins;
     align-items: center;
-    border-radius: 50%;
-    margin: 5px;
+    /* margin: 100px; */
     text-align: center;
-    vertical-align: middle; 
     display: inline-block;
+    margin-top:10%;
 }
 
 
 
-.rowC{display:flex; flex-direction:row; margin: 100px}
+.rowC{
+    display:flex; 
+    flex-direction:row; 
+    margin: 100px;
+    overflow: hidden;
+}
 
 .text{
     font-family: Poppins;
@@ -91,4 +96,8 @@
 
 .Identity{
     max-width: 400px
+}
+
+#subText{
+    margin-top: 10%;
 }

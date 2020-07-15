@@ -6,6 +6,7 @@ import dayjs from 'dayjs'
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import EditDetails from './EditDetails';
+import Grid from '@material-ui/core/Grid';
 
 import Button from '@material-ui/core/Button'
 import MuiLink from '@material-ui/core/Link'
@@ -24,7 +25,9 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = {
     paper: {
-        padding: 20
+        padding: 20,
+        display:'flex',
+        overflow: 'hidden'
       },
       profile: {
         '& .image-wrapper': {
@@ -94,9 +97,15 @@ class Profile extends Component {
 
         let profileMarkup = !loading ? (
             authenticated ? (
-                <Paper className = {classes.paper}>
+                <Grid container
+                direction="column"
+                alignItems="center"
+                id= 'loginSide'
+                spacing = {10}
+                className={classes.paper}>
+                  <Grid item sm = {6}>
                     <div className = {classes.profile}>
-                        <div className = "profile-image">
+                        <div style={{alignContent:'center'}}className = "profile-image">
                             <img src = {imageUrl} alt = "profile" className = "profile-image"/>
                             <input 
                               type="file" 
@@ -129,7 +138,8 @@ class Profile extends Component {
                         <EditDetails/>
                     </div>
                     <Button color = "inherit" component = {Link} to = "/home/survey">Survey</Button>
-                </Paper>
+                  </Grid>
+                </Grid>
         ) : (
                 <Paper className = {classes.paper}>
                     <Typography variant = "body2" align = "center">

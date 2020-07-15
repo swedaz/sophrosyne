@@ -83,7 +83,7 @@ class Identity extends Component {
             <div >
                 <div>
                     <div>
-                    <Container className = 'identity'>
+                    <Container style={{borderLeft: 'solid #FF723F 5px'}} className = 'identity'>
                     <h2 className = 'text'>Select an identity: </h2>
                     <Button class = {btn_class1} key = "BIPOC" onClick={this.handleClick1.bind(this)} >BIPOC</Button>
                     <Button class = {btn_class2}  key = "LGBTQ+" onClick={this.handleClick2.bind(this)}>LGBTQ+</Button>
