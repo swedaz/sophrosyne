@@ -2,6 +2,6 @@ body{
     overflow: hidden;
 }
 #profileContainer {
-    float: left;
+    /* float: left; */
     /* justify-content: center; */
 }

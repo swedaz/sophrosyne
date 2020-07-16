@@ -12,10 +12,10 @@ body{
   max-width: 200px; */
 }
 .nav-container{
-  margin: auto;
+  /* margin: auto; */
   background-color: #F6F5F5;
   color: black;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   /* padding: 10px; */
   
 }
@@ -23,6 +23,4 @@ body{
   /* color: orange; */
   border-bottom: solid 5px #FF723F;
 }
-#logo{
-  float: left;
-}
+
