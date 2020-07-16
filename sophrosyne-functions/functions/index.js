@@ -16,7 +16,7 @@ app.post('/user/survey', FBAuth, addSurveyDetails)
 app.post('/user', FBAuth, addUserDetails);
 app.get('/user', FBAuth, getAuthenticatedUser);
 
-app.get('/user/search', getUsers)
+app.get('/user/search', FBAuth, getUsers);
 
 
 

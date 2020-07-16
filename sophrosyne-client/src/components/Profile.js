@@ -145,6 +145,7 @@ class Profile extends Component {
                         <EditDetails/>
                     </div>
                     <Button color = "inherit" component = {Link} to = "/home/survey">Survey</Button>
+                    <Button color = "inherit" component = {Link} to = "/home/matches">Matches</Button>
                   </Grid>
                 </Grid>
         ) : (

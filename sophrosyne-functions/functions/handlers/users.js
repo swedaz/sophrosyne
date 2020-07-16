@@ -221,7 +221,7 @@ exports.uploadImage = (req, res) => {
 // }
 
 exports.getUsers = (req, res) => {
-  db.doc(`/users/kels`).get()
+  db.doc(`/users/${req.user.handle}`).get()
     .then((me) => {
       if(me.exists && "identities" in me.data()) {
         db.collection("users").get()
