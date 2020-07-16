@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import EditDetails from './EditDetails';
 import Grid from '@material-ui/core/Grid';
+import './Profile.css'
 
 import Button from '@material-ui/core/Button'
 import MuiLink from '@material-ui/core/Link'
@@ -99,14 +100,14 @@ class Profile extends Component {
             authenticated ? (
                 <Grid container
                 direction="column"
-                alignItems="center"
-                id= 'loginSide'
+                // alignItems="center"
+                id= 'profileContainer'
                 spacing = {10}
                 className={classes.paper}>
                   <Grid item sm = {6}>
                     <div className = {classes.profile}>
-                        <div style={{alignContent:'center'}}className = "profile-image">
-                            <img src = {imageUrl} alt = "profile" className = "profile-image"/>
+                        <div className = "profile-image">
+                            <img style= {{justifyContent:'center'}}src = {imageUrl} alt = "profile" className = "profile-image"/>
                             <input 
                               type="file" 
                               id= "imageInput" 

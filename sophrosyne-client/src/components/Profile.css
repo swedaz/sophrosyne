@@ -1,0 +1,7 @@
+body{
+    overflow: hidden;
+}
+#profileContainer {
+    float: left;
+    /* justify-content: center; */
+}
