@@ -100,9 +100,9 @@ class Profile extends Component {
             authenticated ? (
                 <Grid container
                 direction="column"
-                // alignItems="center"
                 id= 'profileContainer'
                 spacing = {10}
+                style= {{width:'100vw', height: '100vh'}}
                 className={classes.paper}>
                   <Grid item sm = {6}>
                     <div className = {classes.profile}>
@@ -126,7 +126,7 @@ class Profile extends Component {
                     @{handle}
                 </MuiLink>
                 <hr/>
-                {bio && <Typography variant = "body2">{bio}</Typography>}
+                {bio && <Typography id = "Bio" variant = "body2">{bio}</Typography>}
                 <hr/>
                 <hr/>
                 {genders && <Typography variant = "body2">Pronouns: {genders}</Typography>}
@@ -144,8 +144,8 @@ class Profile extends Component {
                         </Tooltip>
                         <EditDetails/>
                     </div>
-                    <Button color = "inherit" component = {Link} to = "/home/survey">Survey</Button>
-                    <Button color = "inherit" component = {Link} to = "/home/matches">Matches</Button>
+                    <Button id = "surveyButton"  component = {Link} to = "/home/survey">Survey</Button>
+                    <Button id = "MatchesButton" component = {Link} to = "/home/matches">Matches</Button>
                   </Grid>
                 </Grid>
         ) : (
