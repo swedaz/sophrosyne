@@ -221,35 +221,76 @@ exports.uploadImage = (req, res) => {
 // }
 
 exports.getUsers = (req, res) => {
-  //db.doc(`/users/${req.user.handle}`).get()
-    // .then((me) => {
-    //   if(me.exists) {
-    //     let ids = me.data().identities
-    //     console.log(ids)
-    //   }else{
-    //     res.json({message: "No id found"})
-    //   }
+  db.doc(`/users/kels`).get()
+    .then((me) => {
+      if(me.exists && "identities" in me.data()) {
+        db.collection("users").get()
+        .then((LGBTQusers) => {
+          if(LGBTQusers.docs.length === 0){
+            res.json({message: "No results", results: []})
+          }else{
+            let ids = []
+            let idsQuery = me.data().identities
+            LGBTQusers.docs.forEach(user => {
+              let userData = user.data()
+              if("identities" in userData){
+                let shouldInclude = false
+                for(identity of idsQuery){
+                  shouldInclude = shouldInclude || userData.identities.includes(identity)
+                }
+                if(shouldInclude && user.id !== me.id){
+                  let profileData = {id: user.id, bio: user.data().bio, identities: user.data().identities}
+                  ids.push(profileData)
+                }
+                //if(userData.identities.includes("BIPOC") && userData.identities.includes("LGBTQ+"))
+                //ids.push(user.id)
+              }
 
-      db.collection("users").where('identities','array-contains', 'BIPOC' ).get()
-      .then((BIPOCusers) => {
-        if(BIPOCusers.docs.length === 0){
-          res.json({message: "No results", results: []})
-        }else{
-          //res.json({message: "BIPOC"})
-          res.json({results:[BIPOCusers.docs[0].id]})
-        }
-      })
-      
-
-      db.collection("users").wheres('identities','array-contains', 'LGBTQ+' ).get()
-      .then((LGBTQusers) => {
-        if(LGBTQusers.docs.length === 0){
-          res.json({message: "No results", results: []})
-        }else{
-          //res.json({message: "LGBTQ+"})
-          res.json({results:[LGBTQusers.docs[0].id]})
-        }
+            })
+            res.json({message: "Matched Users", results:ids})
+          }
+        })
         
+      }else{
+        res.json({message: "No id found"})
+      }
+    
+    })
+    .catch((err) => {
+      console.error(err);
+      return res.status(500).json({ error: err.code });
+    });
+
+      // db.collection("users").where('identities','array-contains', 'BIPOC' ).get()
+      // .then((BIPOCusers) => {
+      //   if(BIPOCusers.docs.length === 0){
+      //     res.json({message: "No results", results: []})
+      //   }else{
+      //     res.json({message: "BIPOC", results:[BIPOCusers.docs[0].id]})
+      //     res.json({results:[BIPOCusers.docs[1].id]})
+      //   }
+      // })
+
+      // db.collection("users").where('identities','array-contains', 'International Student' ).get()
+      // .then((internationalStudentUser) => {
+      //   if(internationalStudentUser.docs.length === 0){
+      //     res.json({message: "No results", results: []})
+      //   }else{
+      //     res.json({message: "International Student", results:[internationalStudentUser.docs[0].id]})
+      //     res.json({results:[internationalStudentUser.docs[1].id]})
+      //   }
+      // })
+
+      // db.collection("users").where('identities','array-contains', 'Anyone' ).get()
+      // .then((anyoneUser) => {
+      //   if(anyoneUser.docs.length === 0){
+      //     res.json({message: "No results", results: []})
+      //   }else{
+      //     res.json({message: "Anyone", results:[anyoneUser.docs[0].id]})
+      //     res.json({results:[anyoneUser.docs[1].id]})
+      //   }
+      //})
       
-      })
+
+
     }
