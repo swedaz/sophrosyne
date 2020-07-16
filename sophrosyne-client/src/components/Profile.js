@@ -90,7 +90,7 @@ class Profile extends Component {
   };
   render() {
           const { classes, user: { 
-                credentials: { handle, createdAt, imageUrl, bio }, 
+                credentials: { handle, createdAt, imageUrl, bio, identities, genders }, 
                 loading,
                 authenticated
             }
@@ -127,6 +127,12 @@ class Profile extends Component {
                 </MuiLink>
                 <hr/>
                 {bio && <Typography variant = "body2">{bio}</Typography>}
+                <hr/>
+                <hr/>
+                {genders && <Typography variant = "body2">Pronouns: {genders}</Typography>}
+                <hr/>
+                <hr/>
+                {identities && <Typography variant = "body2">Identities: {identities} </Typography>}
                 <hr/>
                 <CalendarToday color = "primary"/>{' '}
             <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
