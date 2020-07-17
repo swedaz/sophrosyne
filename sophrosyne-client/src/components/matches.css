@@ -1,0 +1,76 @@
+.match-container {
+    background-color: #FFFFFF;
+    max-width: 10000px;
+    max-height: 150px;
+    margin:  0px;
+    padding: 10px;
+    border: 4px solid rgba(255, 115, 63, 0.3);
+    display:flex; 
+    flex-direction:row; 
+    margin: 15px;
+    overflow: hidden;
+  }
+
+  .text-container {
+    background-color: #FFFFFF;
+    width: 750px;
+    max-height: 150px;
+    margin:  0px;
+    overflow: hidden;
+  }
+
+  .match-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin: 10px;
+      
+  }
+
+
+
+
+
+  
+.texting-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    margin:2px;
+    padding:2px;
+}
+
+.user-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    margin:2px;
+    padding:2px;
+    color: #FF723F;
+}
+
+.pronoun-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    margin:2px;
+    padding:2px;
+}
+
+
+
+
+
+.chatMe-button{
+    width: 125px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 15px;
+    color: white;
+    float: right;
+    background: #FF723F;
+    
+}

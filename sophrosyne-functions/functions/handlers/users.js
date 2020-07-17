@@ -225,13 +225,13 @@ exports.getUsers = (req, res) => {
     .then((me) => {
       if(me.exists && "identities" in me.data()) {
         db.collection("users").get()
-        .then((LGBTQusers) => {
-          if(LGBTQusers.docs.length === 0){
+        .then((matchedUsers) => {
+          if(matchedUsers.docs.length === 0){
             res.json({message: "No results", results: []})
           }else{
             let ids = []
             let idsQuery = me.data().identities
-            LGBTQusers.docs.forEach(user => {
+            matchedUsers.docs.forEach(user => {
               let userData = user.data()
               if("identities" in userData){
                 let commonIdentities = []
@@ -242,7 +242,7 @@ exports.getUsers = (req, res) => {
                   
                 }
                 if(commonIdentities.length > 0 && user.id !== me.id){
-                  let profileData = {id: user.id, bio: user.data().bio, identities: user.data().identities, commonIdentities: commonIdentities}
+                  let profileData = {id: user.id, bio: user.data().bio, identities: user.data().identities, commonIdentities: commonIdentities, pronouns: user.data().genders, imageUrl: user.data().imageUrl}
                   ids.push(profileData)
                 }
                 //if(userData.identities.includes("BIPOC") && userData.identities.includes("LGBTQ+"))

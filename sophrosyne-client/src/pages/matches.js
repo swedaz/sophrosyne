@@ -16,15 +16,9 @@ export class matches extends Component {
      componentDidMount(){
         
         getUsers()(s => {
-            console.log(s)
+            //console.log(s)
             this.setState({matchResults: s.data})
-        
         })
-
-        //('/user/survey', {method: 'POST'}).then(surveyMatches => surveyMatches.json()).then(s => this.setState({matches: s}))
-             
-        //this.setState({matches: surveyMatches.json()}))
-
     }
 
     
@@ -38,7 +32,7 @@ export class matches extends Component {
                 flex-direction = 'row' 
                 style={{marginTop :'10%'}}>
                     <Grid item xs = {6}>
-                        <h1>Hello world</h1>
+                        <h1>Meet your friends!</h1>
                         <MatchesComp matches = {this.state.matchResults}/>
                     </Grid>
                 </Grid>
