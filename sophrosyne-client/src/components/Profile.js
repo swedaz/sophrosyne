@@ -131,10 +131,10 @@ class Profile extends Component {
                 {bio && <Typography id = "Bio" variant = "body2">{bio}</Typography>}
                 <hr/>
                 <hr/>
-                {genders && <Typography variant = "body2">Pronouns: {genders}</Typography>}
+                {genders && <Typography variant = "body2">Pronouns: {genders + " "}</Typography>}
                 <hr/>
                 <hr/>
-                {identities && <Typography variant = "body2">Identities: {identities} </Typography>}
+                {identities && <Typography variant = "body2">Identities: {identities + " "} </Typography>}
                 <hr/>
                   <Tooltip title= "Logout" placement= "top">
                     <IconButton onClick = {this.handleLogout}>
