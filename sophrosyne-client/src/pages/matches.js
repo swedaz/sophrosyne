@@ -33,7 +33,7 @@ export class matches extends Component {
                 justify= "center"
                 spacing = {10} 
                 flex-direction = 'row' 
-                style={{marginTop :'10%', marginLeft: '17%'}}>
+                style={{marginTop :'5%', marginLeft: '17%'}}>
                     <Grid item xs = {6}>
                         <h1> Meet your friends!</h1>
                         <MatchesComp matches = {this.state.matchResults}/>
