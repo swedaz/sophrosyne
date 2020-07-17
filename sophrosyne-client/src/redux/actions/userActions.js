@@ -91,11 +91,10 @@ export const surveySubmit = (userDetails) => (dispatch) => {
     .catch(err => console.log(err));
 }
 
-export const getUsers = (userDetails) => (dispatch) => {
-  dispatch({type: LOADING_USER});
-  axios.post('/user/search', userDetails)
+export const getUsers = () => (dispatch) => {
+  axios.get('/user/search')
     .then((res) => {
-      dispatch(res.body);
+      dispatch(res);
     })
     .catch(err => console.log(err));
 }

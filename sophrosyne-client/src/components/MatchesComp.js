@@ -8,12 +8,21 @@ import Container from '@material-ui/core/Container'
 
 
 class Identity extends Component {
-    
+    constructor(props){
+        super(props)
+    }
     renderMatch(match){
         return( 
             <div>
+
+                <h1>
                 {match.id}
+                </h1>
+                <h2>
                 {match.bio}
+                </h2>
+
+                
             </div>
     
         )
@@ -21,8 +30,9 @@ class Identity extends Component {
 
     
     render() {
-        let testMatches = {results: [{id: "test1", bio: "bio1"}, {id: "test2", bio: "bio2"}]}
-        let matchDisplay = testMatches.results.map(this.renderMatch) 
+        console.log(this.props)
+        //let testMatches = {results: [{id: "test1", bio: "bio1"}, {id: "test2", bio: "bio2"}]}
+        let matchDisplay = this.props.matches.results.map(this.renderMatch) 
         
 
         return (

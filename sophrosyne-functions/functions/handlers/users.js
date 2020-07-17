@@ -234,12 +234,15 @@ exports.getUsers = (req, res) => {
             LGBTQusers.docs.forEach(user => {
               let userData = user.data()
               if("identities" in userData){
-                let shouldInclude = false
+                let commonIdentities = []
                 for(identity of idsQuery){
-                  shouldInclude = shouldInclude || userData.identities.includes(identity)
+                  if(userData.identities.includes(identity)){
+                    commonIdentities.push(identity)
+                  }
+                  
                 }
-                if(shouldInclude && user.id !== me.id){
-                  let profileData = {id: user.id, bio: user.data().bio, identities: user.data().identities}
+                if(commonIdentities.length > 0 && user.id !== me.id){
+                  let profileData = {id: user.id, bio: user.data().bio, identities: user.data().identities, commonIdentities: commonIdentities}
                   ids.push(profileData)
                 }
                 //if(userData.identities.includes("BIPOC") && userData.identities.includes("LGBTQ+"))
