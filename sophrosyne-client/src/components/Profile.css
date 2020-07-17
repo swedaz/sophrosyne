@@ -2,17 +2,54 @@ body{
     overflow: hidden;
 }
 #profileContainer {
-    justify-content: left;
+    position: absolute;
+    top: 75px;
+    left: 40px;
     background: linear-gradient(180deg, rgba(246, 245, 245, 0) 0%, rgba(255, 115, 63, 0.24) 100%);
+    border-right: 4px solid #FF723F;
 
 }
+.profile-image{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+#ProfButtons{
+    display: block !important;
+    margin: 0 auto;
+    
+}
+.profile-details{
+    border: 2px solid #FF723F;
+    padding: 20px;
+    margin: 20px
+}
+
+#PhotoEdit{
+    margin-left: 100px !important;
+}
+
 #surveyButton{
     width: 200px;
     height: 60px;
     font-size: 20px;
     border-radius: 50px;
     color: white;
-    background: #FF723F
+    background: #fdce00;
+    margin-left: 60px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#surveyButton2{
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 50px;
+    color: white;
+    background: #fdce00;
+    margin-right: 10px;
+    margin-left: 60px;
 }
 #Bio{
     font-size: 15px;
@@ -23,5 +60,14 @@ body{
     font-size: 20px;
     border-radius: 50px;
     color: white;
-    background: #FF723F
+    background: #fdce00;
+    margin-bottom: 10px;
+}
+#MatchesButton2{
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 50px;
+    color: white;
+    background: #FF723F;
 }

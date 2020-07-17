@@ -26,7 +26,7 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = {
     paper: {
-        padding: 20,
+        // padding: 20,
         display:'flex',
         overflow: 'hidden'
       },
@@ -41,8 +41,8 @@ const styles = {
           }
         },
         '& .profile-image': {
-          width: 200,
-          height: 200,
+          // width: 200,
+          // height: 200,
           objectFit: 'cover',
           maxWidth: '100%',
           borderRadius: '50%'
@@ -99,26 +99,28 @@ class Profile extends Component {
         let profileMarkup = !loading ? (
             authenticated ? (
                 <Grid container
-                direction="column"
+                direction="row"
                 id= 'profileContainer'
+                justify= 'center'
+                alignItems= 'center'
                 spacing = {10}
-                style= {{width:'100vw', height: '100vh'}}
+                style= {{width:'40vw', height: '100vh'}}
                 className={classes.paper}>
-                  <Grid item sm = {6}>
+                  <Grid display= 'flex'>
                     <div className = {classes.profile}>
+                            <Tooltip title= "Edit Profile Picture" placement= "top">
+                              <IconButton id= "PhotoEdit" onClick={this.handleEditPicture} className="Button">
+                                <EditIcon color = "primary"/>
+                              </IconButton>
+                           </Tooltip>
                         <div className = "profile-image">
-                            <img style= {{justifyContent:'center'}}src = {imageUrl} alt = "profile" className = "profile-image"/>
+                            <img src = {imageUrl} alt = "profile" className = "profile-image"/>
                             <input 
                               type="file" 
                               id= "imageInput" 
                               hidden= "hidden"
                               onChange={this.handleImageChange}
                             />
-                           <Tooltip title= "Edit Profile Picture" placement= "top">
-                            <IconButton onClick={this.handleEditPicture} className="Button">
-                                <EditIcon color = "primary"/>
-                              </IconButton>
-                           </Tooltip>
                         </div>
                         <hr/>
                         <div className = "profile-details">
@@ -134,18 +136,22 @@ class Profile extends Component {
                 <hr/>
                 {identities && <Typography variant = "body2">Identities: {identities} </Typography>}
                 <hr/>
+                  <Tooltip title= "Logout" placement= "top">
+                    <IconButton onClick = {this.handleLogout}>
+                      <KeyboardReturn color="primary"/>
+                    </IconButton>
+                  </Tooltip>
                 <CalendarToday color = "primary"/>{' '}
             <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
-                        </div>
-                        <Tooltip title= "Logout" placement= "top">
-                          <IconButton onClick = {this.handleLogout}>
-                            <KeyboardReturn color="primary"/>
-                          </IconButton>
-                        </Tooltip>
                         <EditDetails/>
+                        </div>
                     </div>
-                    <Button id = "surveyButton"  component = {Link} to = "/home/survey">Survey</Button>
-                    <Button id = "MatchesButton" component = {Link} to = "/home/matches">Matches</Button>
+                    <div id = "ProfButtons" >
+                      <Button id = "surveyButton"  component = {Link} to = "/home/survey">Survey</Button>
+                      <Button id = "MatchesButton" component = {Link} to = "/home/matches">Matches</Button>
+                      <Button id = "surveyButton2"  component = {Link} to = "/home/survey">Survey</Button>
+                      <Button id = "MatchesButton2" component = {Link} to = "/home/matches">Matches</Button>
+                    </div>
                   </Grid>
                 </Grid>
         ) : (
