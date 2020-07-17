@@ -3,6 +3,7 @@ import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper';
 import MatchesComp from '../components/MatchesComp'
+import Profile from '../components/Profile'
 import { connect } from 'react-redux';
 import { getUsers } from '../redux/actions/userActions';
 
@@ -25,14 +26,16 @@ export class matches extends Component {
     render() {
         console.log(this.state)
         return (
+            
             <div>
+                <Profile/>
                 <Grid container
                 justify= "center"
                 spacing = {10} 
                 flex-direction = 'row' 
-                style={{marginTop :'10%'}}>
+                style={{marginTop :'10%', marginLeft: '17%'}}>
                     <Grid item xs = {6}>
-                        <h1>Meet your friends!</h1>
+                        <h1> Meet your friends!</h1>
                         <MatchesComp matches = {this.state.matchResults}/>
                     </Grid>
                 </Grid>

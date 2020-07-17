@@ -22,13 +22,13 @@ class Identity extends Component {
                 <div className = "text-container">
 
                     <h1 className = "user-text">
-                        {match.id} ({match.pronouns}) 
+                        {match.id} ({match.pronouns + " "}) 
                     </h1>
                     <h2 className = "pronoun-text">
                               {match.bio}
                     </h2>
                     <h2 className = "texting-text">
-                        Meet {match.id}! You both identify as {match.commonIdentities}!
+                        Meet {match.id}! You both identify as {match.commonIdentities + " "}!
                     </h2>
                 
                 </div>
