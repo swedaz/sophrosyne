@@ -33,7 +33,7 @@ class Identity extends Component {
                 
                 </div>
                 <div>
-                    <Button className = "chatMe-button">
+                    <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button">
                         Chat with me
                     </Button>
                 </div>
