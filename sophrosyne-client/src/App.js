@@ -27,6 +27,7 @@ import survey from './pages/survey';
 import matches from './pages/matches';
 import chat from './pages/chat';
 import axios from 'axios';
+import help from './pages/help';
 
 const theme = createMuiTheme(themeFile);
 
@@ -59,6 +60,7 @@ function App() {
             <Route exact path = "/home/survey" component = {survey} />
             <Route exact path = "/home/matches" component = {matches} />
             <Route exact path = "/home/chat/:user" component = {chat} />
+            <Route exact path = "/home/help" component = {help} />
           </Switch>
           </div>
         </Router>

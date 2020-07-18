@@ -13,5 +13,16 @@ html,body{
     padding-top: 50px;
     padding-left: 50px;
 }
+.aboutUs2 {
+    background: linear-gradient(to bottom right rgba(255, 115, 63, 0.8) 46.41%, rgba(255, 115, 63, 0.2) 102.28%);
+    position: absolute;
+    width: 2596px;
+    height: 850px;
+    left: 0px;
+    right: 0px;
+    top: 20px;
+    padding-top: 50px;
+    padding-left: 50px;
+}
 
 
