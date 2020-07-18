@@ -3,8 +3,7 @@ html,body{
     
 }
 .aboutUs {
-    background-image: linear-gradient(to bottom right, red, yellow);
-    position: absolute;
+    background-image: linear-gradient(to bottom, #fdcd00, #ff713e);
     width: 2596px;
     height: 850px;
     left: 0px;
@@ -12,6 +11,29 @@ html,body{
     top: 20px;
     padding-top: 50px;
     padding-left: 50px;
+}
+
+.abouUs2 {
+    background-image: linear-gradient(to bottom, #ff713e, #ffb499);
+    width: 2596px;
+    height: 850px;
+    left: 166px;
+    top: 196.84px;
+    padding-left: 50px;
+}
+
+.abouUs3 {
+    background-image: linear-gradient(to bottom, #ffb499, #ffece6);
+    width: 2596px;
+    height: 850px;
+    left: 166px;
+    top: 196.84px;
+    padding-left: 50px;
+}
+
+.team {
+    padding-left: 0px;
+    right: 166px;
 }
 
 
