@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
 import { getMessages, sendMessage } from '../redux/actions/userActions';
 import MuiLink from '@material-ui/core/Link'
+import Profile from '../components/Profile'
 import '../pages/chat.css'
 
 const chatStyle = {color: 'black', fontSize: '100px', fontFamily: 'Arial', display: 'flex', alignItems: 'center', textAlign: 'center'};
@@ -38,7 +39,7 @@ function Chat(routeParams) {
 
     return (
         <div className = "chat">
-            <h1 style = {chatStyle}>Chat app</h1>
+            <Profile />
             <h3> Say hi to {username} </h3>
             <form>
             <FormControl className = 'enter'>
