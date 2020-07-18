@@ -18,8 +18,8 @@ app.get('/user', FBAuth, getAuthenticatedUser);
 
 app.get('/user/search', FBAuth, getUsers);
 
-app.post('/user/chat', sendChat)
-app.post('/user/getMessages', getChat)
+app.post('/user/chat', FBAuth, sendChat)
+app.post('/user/getMessages', FBAuth, getChat)
 
 
 

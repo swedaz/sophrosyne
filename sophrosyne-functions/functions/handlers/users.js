@@ -299,7 +299,7 @@ exports.getUsers = (req, res) => {
 exports.sendChat = (req, res) => {
   console.log(req.body)
   let chat = {
-    users: ['swetha',  req.body.toUser],
+    users: [req.user.handle,  req.body.toUser],
    //user2: req.body.toUser, 
     message: req.body.message, 
     //time: firebase.firestore.FieldValue.serverTimestamp()
@@ -320,7 +320,7 @@ exports.sendChat = (req, res) => {
 }
 
 exports.getChat = (req, res) => {
-  let me = "aUser"
+  let me = req.user.handle
   let other = req.body.user
   db.collection("messages").where("users", "in", [[me, other],[other, me]])  //("user1", "in", [me, other]).where  //("user2", "in", [me, other])
   .get()

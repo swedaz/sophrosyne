@@ -99,6 +99,22 @@ export const getUsers = () => (dispatch) => {
     .catch(err => console.log(err));
 }
 
+export const sendMessage = (otherUser) => (dispatch) => {
+  axios.post('/user/chat', otherUser)
+    .then((res) => {
+      dispatch(res);
+    })
+    .catch(err => console.log(err));
+}
+
+export const getMessages = (otherUser) => (dispatch) => {
+  axios.post('/user/getMessages', otherUser)
+    .then((res) => {
+      dispatch(res);
+    })
+    .catch(err => console.log(err));
+}
+
 const setAuthorizationHeader = (token) => {
   const FBIdToken = `Bearer ${token}`;
   localStorage.setItem('FBIdToken', FBIdToken);

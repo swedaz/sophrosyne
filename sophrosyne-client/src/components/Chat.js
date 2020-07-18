@@ -2,7 +2,6 @@ import React, { useState, useEffect }from 'react'
 import Message from '../components/Message'
 import { Link } from 'react-router-dom';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
-import { getMessages, sendMessage } from '../redux/actions/userActions';
 import MuiLink from '@material-ui/core/Link'
 import '../pages/chat.css'
 
@@ -11,21 +10,17 @@ const chatStyle = {color: 'black', fontSize: '100px', fontFamily: 'Arial', displ
 function Chat(routeParams) {
     console.log(routeParams.match.params.user);
     const [input, setInput] = useState('');
-    const [messages, setMessages] = useState([]);
-    const username = routeParams.match.params.user;
+    const [messages, setMessages] = useState([{
+        username: 'sonny', message: 'hello'}, 
+        {username: 'swetha', text: 'yo'}
+    ]);
+    const [username, setUsername] = useState(routeParams.match.params.user);
 
-    useEffect(() => {
-        getMessages({user: username})(msg => {
-            console.log(msg.data.messages);
-            setMessages(msg.data.messages);   
-        })
-    }, [])
-
-    const onSendMessage = (event) => {
+    const sendMessage = (event) => {
         event.preventDefault();
-        sendMessage({toUser: username, message: input})(msg => {
-
-        })
+        setMessages([
+            ...messages, {username: username, text: input}
+        ]);
         setInput('');
     }
 
@@ -34,15 +29,15 @@ function Chat(routeParams) {
             <h1 style = {chatStyle}>Chat app</h1>
             <h3> Welcome {username} </h3>
             <form>
-            <FormControl className = 'enter'>
+            <FormControl>
                 <InputLabel>Enter a message</InputLabel>
                 <Input value = {input} onChange = {event => setInput(event.target.value)}/>
-                <Button disabled = {!input} variant = "contained" color = "primary" type = 'submit' onClick = {onSendMessage}>Send message</Button>
+                <Button disabled = {!input} variant = "contained" color = "primary" type = 'submit' onClick = {sendMessage}>Send message</Button>
             </FormControl>
             </form>
             {
                 messages.map(message => (
-                    <Message sender = {message.users[0]} otherUser = {username} message = {message.message}/>
+                    <Message username = {username} message = {message}/>
                 ))
             }
         </div>

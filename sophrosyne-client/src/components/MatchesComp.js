@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container'
 import './matches.css'
 
-
-
-
-
 class Identity extends Component {
     constructor(props){
         super(props)
@@ -33,7 +29,8 @@ class Identity extends Component {
                 
                 </div>
                 <div>
-                    <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button">
+                    <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button" 
+                    component = {Link} to = {"/home/chat/" + match.id}>
                         Chat with me
                     </Button>
                 </div>
