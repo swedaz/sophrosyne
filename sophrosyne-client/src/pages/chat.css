@@ -7,8 +7,9 @@
     top: 20px;
     padding-top: 50px;
     padding-left: 50px;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
-
 .enter {
     left: 20px;
 }

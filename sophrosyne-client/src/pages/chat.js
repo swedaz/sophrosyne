@@ -14,11 +14,18 @@ function Chat(routeParams) {
     const [messages, setMessages] = useState([]);
     const username = routeParams.match.params.user;
 
-    useEffect(() => {
+    function pullMessages() {
         getMessages({user: username})(msg => {
             console.log(msg.data.messages);
-            setMessages(msg.data.messages);   
+            setMessages(msg.data.messages);
+            setTimeout(() => {
+                pullMessages()
+            }, 1000);
         })
+    }
+
+    useEffect(() => {
+        pullMessages()
     }, [])
 
     const onSendMessage = (event) => {
@@ -32,7 +39,7 @@ function Chat(routeParams) {
     return (
         <div className = "chat">
             <h1 style = {chatStyle}>Chat app</h1>
-            <h3> Welcome {username} </h3>
+            <h3> Say hi to {username} </h3>
             <form>
             <FormControl className = 'enter'>
                 <InputLabel>Enter a message</InputLabel>
