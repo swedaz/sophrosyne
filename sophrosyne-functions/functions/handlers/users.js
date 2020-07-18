@@ -293,7 +293,22 @@ exports.getUsers = (req, res) => {
       //     res.json({results:[anyoneUser.docs[1].id]})
       //   }
       //})
-      
-
 
     }
+
+exports.sendChat = (req, res) => {
+  let chat = {
+    user1: 'swetha', 
+    user2: req.body.toUser, 
+    message: req.body.message, 
+    //time: firebase.firestore.FieldValue.serverTimestamp()
+  }
+  db.collection(`messages`).add(chat)
+  .then (() => {
+    res.json({message: "Sent chat"})
+  })
+  .catch((err) => {
+    console.error(err);
+    return res.status(500).json({ error: err.code });
+  })
+}

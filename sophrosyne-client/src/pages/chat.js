@@ -1,23 +1,36 @@
-import React, { useState }from 'react'
+import React, { useState, useEffect }from 'react'
 import Message from '../components/Message'
+import { Link } from 'react-router-dom';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core';
+import MuiLink from '@material-ui/core/Link'
 import './chat.css'
 
 const chatStyle = {color: 'black', fontSize: '100px', fontFamily: 'Arial', display: 'flex', alignItems: 'center', textAlign: 'center'};
 
 function Chat() {
     const [input, setInput] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState([{
+        username: 'sonny', message: 'hello'}, 
+        {username: 'swetha', text: 'yo'}
+    ]);
     const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        setUsername(prompt('Set username'))
+    }, [])
 
     const sendMessage = (event) => {
         event.preventDefault();
-        setMessages([...messages, input]);
+        setMessages([
+            ...messages, {username: username, text: input}
+        ]);
         setInput('');
     }
+
     return (
         <div className = "chat">
-            <h2 style = {chatStyle}>Chat app</h2>
+            <h1 style = {chatStyle}>Chat app</h1>
+            <h3> Welcome {username} </h3>
             <form>
             <FormControl>
                 <InputLabel>Enter a message</InputLabel>
@@ -27,7 +40,7 @@ function Chat() {
             </form>
             {
                 messages.map(message => (
-                    <Message text = {message}/>
+                    <Message username = {username} message = {message}/>
                 ))
             }
         </div>
