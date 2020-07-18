@@ -297,13 +297,19 @@ exports.getUsers = (req, res) => {
     }
 
 exports.sendChat = (req, res) => {
+  console.log(req.body)
   let chat = {
-    user1: 'swetha', 
-    user2: req.body.toUser, 
+    users: ['swetha',  req.body.toUser],
+   //user2: req.body.toUser, 
     message: req.body.message, 
     //time: firebase.firestore.FieldValue.serverTimestamp()
+    //time: firebase.firestore.Timestamp.now()
+    //time: firebase.firestore.Timestamp.fromDate(new Date())
+    time: (new Date()).getTime()
+
   }
   db.collection(`messages`).add(chat)
+  //.then((ref) => db.doc(`/messages/${ref.id}`).update({time: firebase.firestore.FieldValue.serverTimestamp()}))
   .then (() => {
     res.json({message: "Sent chat"})
   })
@@ -311,4 +317,21 @@ exports.sendChat = (req, res) => {
     console.error(err);
     return res.status(500).json({ error: err.code });
   })
+}
+
+exports.getChat = (req, res) => {
+  let me = "aUser"
+  let other = req.body.user
+  db.collection("messages").where("users", "in", [[me, other],[other, me]])  //("user1", "in", [me, other]).where  //("user2", "in", [me, other])
+  .get()
+  .then ((msgs) => {
+    let ms = msgs.docs.map(d => d.data())
+    ms.sort((a,b) => a.time - b.time)
+    res.json({messages: ms})
+  })
+  .catch((err) => {
+    console.error(err);
+    return res.status(500).json({ error: err.code });
+  })
+
 }

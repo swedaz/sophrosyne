@@ -4,7 +4,7 @@ const app = require('express')();
 
 const FBAuth = require('./util/fbAuth');
 
-const { signup, login, uploadImage, addUserDetails, addSurveyDetails, getAuthenticatedUser, getUsers, sendChat } = require('./handlers/users');
+const { signup, login, uploadImage, addUserDetails, addSurveyDetails, getAuthenticatedUser, getUsers, sendChat, getChat } = require('./handlers/users');
 
 // Sign up route
 app.post('/signup', signup);
@@ -19,6 +19,7 @@ app.get('/user', FBAuth, getAuthenticatedUser);
 app.get('/user/search', FBAuth, getUsers);
 
 app.post('/user/chat', sendChat)
+app.post('/user/getMessages', getChat)
 
 
 
