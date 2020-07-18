@@ -26,6 +26,7 @@ import profile from './pages/profile';
 import survey from './pages/survey';
 import matches from './pages/matches';
 import chat from './pages/chat';
+import motivation from './pages/motivation';
 import axios from 'axios';
 import help from './pages/help';
 
@@ -61,6 +62,7 @@ function App() {
             <Route exact path = "/home/matches" component = {matches} />
             <Route exact path = "/home/chat/:user" component = {chat} />
             <Route exact path = "/home/help" component = {help} />
+            <Route exact path = "/home/motivation" component = {motivation} />
           </Switch>
           </div>
         </Router>
