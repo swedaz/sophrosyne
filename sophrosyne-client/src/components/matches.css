@@ -1,3 +1,7 @@
+.match-page{
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
 .match-container {
     background-color: #FFFFFF;
     max-width: 10000px;
@@ -10,6 +14,10 @@
     margin: 15px;
     overflow: hidden;
   }
+
+ .match-section{
+     overflow-y: scroll !important
+ } 
 
   .text-container {
     background-color: #FFFFFF;

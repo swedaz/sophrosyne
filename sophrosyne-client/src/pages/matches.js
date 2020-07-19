@@ -27,14 +27,15 @@ export class matches extends Component {
         console.log(this.state)
         return (
             
-            <div>
+            <div className = "match-page">
                 <Profile/>
-                <Grid container
+                <Grid 
+                container
                 justify= "center"
                 spacing = {10} 
                 flex-direction = 'row' 
                 style={{marginTop :'5%', marginLeft: '17%'}}>
-                    <Grid item xs = {6}>
+                    <Grid item xs = {6} className = "match-section">
                         <h1> Meet your friends!</h1>
                         <MatchesComp matches = {this.state.matchResults}/>
                     </Grid>

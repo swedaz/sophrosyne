@@ -13,3 +13,20 @@
 .enter {
     left: 20px;
 }
+
+.bigPage{
+    overflow-y: hidden !important;
+    overflow-x: hidden;
+}
+
+.message-container {
+    max-width: 700px;
+    max-height: 650px;
+    margin: auto;
+    grid-template-rows: max-content;
+    overflow-y: scroll;
+  }
+  
+.input-box{
+    width: 650px;
+}
