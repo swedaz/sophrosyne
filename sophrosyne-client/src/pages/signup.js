@@ -68,6 +68,7 @@ class signup extends Component {
       handle: this.state.handle
     };
     this.props.signupUser(newUserData, this.props.history);
+    //alert("Take the survey to make new friends!");
   };
   handleChange = (event) => {
     this.setState({

@@ -148,9 +148,9 @@ class Profile extends Component {
                     </div>
                     <div id = "ProfButtons" >
                       <Button id = "surveyButton"  component = {Link} to = "/home/survey">Survey</Button>
-                      <Button id = "MatchesButton" component = {Link} to = "/home/matches">Matches</Button>
+                      <Button id = "MatchesButton" disabled = {!identities} component = {Link} to = "/home/matches">Matches</Button>
                       <Button id = "surveyButton2"  component = {Link} to = "/home/motivation">Motivation</Button>
-                      <Button id = "MatchesButton2" component = {Link} to = "/home/help">Help</Button>
+                      <Button id = "MatchesButton2"  component = {Link} to = "/home/help">Help</Button>
                     </div>
                   </Grid>
                 </Grid>
