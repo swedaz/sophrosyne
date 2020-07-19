@@ -47,7 +47,7 @@ class survey extends Component {
                 <div className='rowC'>
                 <Gender onUpdateGender = { g => this.updateGender(g)} genders = {this.state.genders}/>
                 <Identity onUpdateIdentity = {i => this.updateIdentity(i)} identities = {this.state.identities} />
-                <Button class = "SubmitButton" onClick = {() => this.handleSubmit()} component = {Link} to = "/home"> 
+                <Button class = "SubmitButton" onClick = {() => this.handleSubmit()} component = {Link} to = "/home/motivation"> 
                     <div id= 'subText'>Submit </div>
                 </Button> 
                 </div>
