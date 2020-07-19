@@ -63,6 +63,7 @@ function App() {
             <Route exact path = "/home/chat/:user" component = {chat} />
             <Route exact path = "/home/help" component = {help} />
             <Route exact path = "/home/motivation" component = {motivation} />
+            <Route path="*" component={home} />
           </Switch>
           </div>
         </Router>

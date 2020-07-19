@@ -36,7 +36,7 @@ export class matches extends Component {
                 flex-direction = 'row' 
                 style={{marginTop :'5%', marginLeft: '17%'}}>
                     <Grid item xs = {6} className = "match-section">
-                        <h1> Meet your friends!</h1>
+                        <h1> Meet your friends by taking our survey!</h1>
                         <MatchesComp matches = {this.state.matchResults}/>
                     </Grid>
                 </Grid>
