@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { Image } from 'semantic-ui-react';
 import map from './4euni.png'
-import team from './team2.png'
-import aboutUs3 from './aboutUs3.png'
+import team from './team.png'
+import aboutUs2 from './aboutUs2.png'
 import './aboutUs.css'
  
 import {Link} from 'react-router-dom'
@@ -23,7 +23,7 @@ class aboutUs extends Component {   
                     <Image alt = 'map' src = { map } />
                 </div>
                 <div className = 'abouUs2'>
-                    <Image alt = 'text' src = { aboutUs3 } />
+                    <Image alt = 'text' src = { aboutUs2 } />
                 </div>
                 <div className = 'abouUs3'>
                     <Image className = 'team' alt = 'team' src = { team }/>
