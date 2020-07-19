@@ -20,7 +20,7 @@ class navbar extends Component {
                         <div> There's Hope
                             <Button color = "inherit" style= {{float: 'right', padding: '0px 30px'}} component = {Link} to = "/signup">Sign up</Button>
                             <Button color = "inherit" style= {{float: 'right', padding: '0px 30px'}} component = {Link} to = "/login">Login</Button>
-                            <Button color = "inherit" style= {{float: 'right', padding: '0px 30px'}} component = {Link} to = "/home/motivation">Home</Button>
+                            <Button color = "inherit" style= {{float: 'right', padding: '0px 30px'}} component = {Link} to = "/home">Home</Button>
                             <Button color = "inherit" style= {{float: 'right', padding: '0px 30px'}} component = {Link} to = "/aboutUs">About Us</Button>
                         </div>
                         </Grid>
