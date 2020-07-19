@@ -2,19 +2,8 @@ html,body{
     /* background-image: linear-gradient(to bottom right, red, yellow); */
     
 }
-.aboutUs {
+.aboutUs1 {
     background-image: linear-gradient(to bottom, #fdcd00, #ff713e);
-    width: 2596px;
-    height: 850px;
-    left: 0px;
-    right: 0px;
-    top: 20px;
-    padding-top: 50px;
-    padding-left: 50px;
-}
-.aboutUs2 {
-    background: linear-gradient(to bottom right rgba(255, 115, 63, 0.8) 46.41%, rgba(255, 115, 63, 0.2) 102.28%);
-    position: absolute;
     width: 2596px;
     height: 850px;
     left: 0px;
@@ -28,9 +17,9 @@ html,body{
     background-image: linear-gradient(to bottom, #ff713e, #ffb499);
     width: 2596px;
     height: 850px;
-    left: 166px;
+    left: 50px;
     top: 196.84px;
-    padding-left: 50px;
+    padding-left: 0px;
 }
 
 .abouUs3 {

@@ -3,8 +3,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { Image } from 'semantic-ui-react';
-import Grid from '@material-ui/core/Grid';
+import motiv from './motivation.png'
 import Profile from '../components/Profile'
+import './motivation.css'
 
  
 import {Link} from 'react-router-dom'
@@ -18,7 +19,9 @@ class motivation extends Component {
         return (
             <div className = 'motivation' >
                 <Profile />
-                <h1 style = {aboutStyle}>motivation</h1>
+                <div className = 'motivImage'>
+                    <Image alt = 'motiv' src = { motiv } />
+                </div>
             </div >
         )
     }
