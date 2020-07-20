@@ -75,3 +75,34 @@ body{
     color: white;
     background: #FF723F;
 }
+.connect {
+    position: absolute;
+    width: 745px;
+    height: 96px;
+    left: 50px;
+    top: 120px;
+    padding-left: 0px;
+}
+.info {
+    position: absolute;
+    width: 994px;
+    height: 88px;
+    left: 58px;
+    top: 406px;
+}
+.signUp {
+    position: absolute;
+    width: 150px;
+    height: 64px;
+    left: 0px;
+    top: 302px;
+    padding-left: 0px;
+    border: 2px;
+}
+.account {
+    position: absolute;
+    width: 405px;
+    height: 36px;
+    left: 59px;
+    top: 593px;
+}

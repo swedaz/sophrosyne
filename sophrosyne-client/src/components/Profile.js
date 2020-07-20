@@ -24,6 +24,10 @@ import Survey from '../pages/survey'
 import Paper from '@material-ui/core/Paper';
 //import { IconButton } from '@material-ui/core';
 
+const aboutStyle = {color: 'black', fontSize: '90px', fontFamily: 'Poppins', display: 'flex'};
+const textStyle = {color: 'grey', fontFamily: 'Poppins', fontSize: '30px'};
+const accountStyle = {fontFamily: 'Poppins', fontStyle: 'normal', fontWeight: 'normal',fontSize: '24px', lineHeight: '36px', display: 'flex', alignItems: 'center'};
+
 const styles = {
     paper: {
         // padding: 20,
@@ -155,19 +159,12 @@ class Profile extends Component {
                   </Grid>
                 </Grid>
         ) : (
-                <Paper className = {classes.paper}>
-                    <Typography variant = "body2" align = "center">
-                        No profile found, please login again
-                    </Typography>
-                    <div className = {classes.buttons}>
-                        <Button variant = "contained" color = "primary" component={Link} to="/login">
-                            Login
-                        </Button>
-                        <Button variant = "contained" color = "secondary" component={Link} to="/signup">
-                            Signup
-                        </Button>
-                    </div>
-                </Paper>
+                <div>
+                  <h1 className = 'connect' style = {aboutStyle}>Connections start here!</h1>
+                  <p className = 'info' style = {textStyle}>Begin your journey with us here at TheresHope to find your buddy!</p>
+                  <Button className = 'signUp' component = {Link} to = "/signup" color = "primary" variant = "outlined">Sign Up</Button>
+                  <p style = {accountStyle} className = 'account'>Already have an account? <Link to="/login"> Log in!</Link></p>
+                </div>
         )) : (<p>loading...</p>)
 
         return profileMarkup;
