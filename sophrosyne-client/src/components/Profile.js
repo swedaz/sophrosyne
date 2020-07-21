@@ -151,10 +151,10 @@ class Profile extends Component {
                         </div>
                     </div>
                     <div id = "ProfButtons" >
-                      <Button id = "surveyButton"  component = {Link} to = "/home/survey">Survey</Button>
-                      <Button id = "MatchesButton" disabled = {!identities} component = {Link} to = "/home/matches">Matches</Button>
-                      <Button id = "surveyButton2"  component = {Link} to = "/home/motivation">Motivation</Button>
-                      <Button id = "MatchesButton2"  component = {Link} to = "/home/help">Help</Button>
+                      <Button id = "surveyButton"  component = {Link} to = "/profile/survey">Survey</Button>
+                      <Button id = "MatchesButton" disabled = {!identities} component = {Link} to = "/profile/matches">Matches</Button>
+                      <Button id = "surveyButton2"  component = {Link} to = "/profile/motivation">Motivation</Button>
+                      <Button id = "MatchesButton2"  component = {Link} to = "/profile/help">Help</Button>
                     </div>
                   </Grid>
                 </Grid>
