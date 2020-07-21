@@ -4,13 +4,13 @@ const app = require('express')();
 
 const FBAuth = require('./util/fbAuth');
 
-const { signup, login, uploadImage, addUserDetails, addSurveyDetails, getAuthenticatedUser, getUsers, sendChat, getChat } = require('./handlers/users');
+const { signup, login, uploadImage, addUserDetails, addSurveyDetails, getAuthenticatedUser, getUsers, sendChat, getChat, unmatch } = require('./handlers/users');
 
 // Sign up route
 app.post('/signup', signup);
 app.post('/login', login);
 app.post('/user/image', FBAuth, uploadImage)
-app.post('/user/survey', FBAuth, addSurveyDetails)
+app.post('/user/survey', FBAuth, addSurveyDetails) 
 
 // Add user details
 app.post('/user', FBAuth, addUserDetails);
@@ -20,6 +20,7 @@ app.get('/user/search', FBAuth, getUsers);
 
 app.post('/user/chat', FBAuth, sendChat)
 app.post('/user/getMessages', FBAuth, getChat)
+app.post('/user/unmatch', unmatch)
 
 
 

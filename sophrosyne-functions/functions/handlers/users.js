@@ -197,33 +197,20 @@ exports.uploadImage = (req, res) => {
 };
 
 
+function getUnmatchedList(userdoc){
+  let unmatchedList = [];
+  if(userdoc.data().unmatched){
+    unmatchedList = userdoc.data().unmatched
+  }
+  return unmatchedList
+}
 
-
-// exports.getBIPOCusers = (req, res) => {
-//   db.doc(`/users/${req.user.handle}`).get()
-//     .then((me) => {
-//       if(me.exists) {
-//         let ids = me.data().identities
-//       }else{
-
-//       }
-//       db.collection("users").where('identities','array-contains', 'BIPOC' ).get()
-//       .then((BIPOCusers) => {
-//         if(BIPOCusers.docs.length === 0){
-//           res.json({message: "No results", results: []})
-//         }else{
-//           res.json({results:[BIPOCusers.docs[0].id]})
-//         }
-        
-      
-//       })
-//     })
-// }
 
 exports.getUsers = (req, res) => {
   db.doc(`/users/${req.user.handle}`).get()
     .then((me) => {
       if(me.exists && "identities" in me.data()) {
+        
         db.collection("users").get()
         .then((matchedUsers) => {
           if(matchedUsers.docs.length === 0){
@@ -233,6 +220,12 @@ exports.getUsers = (req, res) => {
             let idsQuery = me.data().identities
             matchedUsers.docs.forEach(user => {
               let userData = user.data()
+              
+              if(getUnmatchedList(me).includes(user.id) || getUnmatchedList(user).includes(me.id)) {
+                return
+              }
+
+              
               if("identities" in userData){
                 let commonIdentities = []
                 for(identity of idsQuery){
@@ -333,5 +326,27 @@ exports.getChat = (req, res) => {
     console.error(err);
     return res.status(500).json({ error: err.code });
   })
+
+}
+
+exports.unmatch = (req, res) => {
+  let unmatch = req.body.user
+  db.doc(`${req.user.handle}`).get()
+  .then (userdoc  => {
+    let unmatchedList = getUnmatchedList(userdoc)
+    
+    unmatchedList.push(unmatch)
+    db.doc(`${req.user.handle}`).update({
+      unmatched: unmatchedList
+    })
+    
+    .then(() => res.json({message: "success"}))
+    
+  })
+  .catch((err) => {
+    console.error(err);
+    return res.status(500).json({ error: err.code });
+  })
+  
 
 }

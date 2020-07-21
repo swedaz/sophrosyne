@@ -3,6 +3,10 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import signupSide from './signup.css';
+import signupPic from './signup.png'
+import signupPictransp from './signup-transp.png'
+import { Image } from 'semantic-ui-react';
+
 
 // MUI Stuff
 import Grid from '@material-ui/core/Grid';
@@ -171,9 +175,9 @@ class signup extends Component {
         direction= 'column'
         justify= 'center'
         alignItems= 'center'>
-          <Typography varient= 'h2' className={classes.pageTitle}>
-                Pictures are optional
-          </Typography>
+          <div className = 'signup-pic'>
+                    <Image src = { signupPictransp }/>
+            </div>
         </Grid>
       </Grid>
     );

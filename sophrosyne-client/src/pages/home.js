@@ -1,14 +1,17 @@
+  
 import React, { Component } from 'react'
 import axios from 'axios'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper';
+import hometransp from './home-transp.png'
+import { Image } from 'semantic-ui-react';
 
 import Profile from '../components/Profile'
 
-export class home extends Component {
+export class home extends Component { 
     render() {
         return (
-            <div>
+            <div className = "home">
                 <Grid container
                 justify= "center"
                 spacing = {10} 
@@ -17,6 +20,7 @@ export class home extends Component {
                     <Grid item xs = {6}>
                         <Profile />
                     </Grid>
+                    <Image src = { hometransp }/>
                 </Grid>
             </div>
         )

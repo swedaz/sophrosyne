@@ -1,0 +1,8 @@
+.homePic{
+    margin:0;
+    padding: 0;
+}
+.home{
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}

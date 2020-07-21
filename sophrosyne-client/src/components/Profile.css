@@ -10,7 +10,6 @@ body{
     left: 40px;
     background: linear-gradient(180deg, rgba(246, 245, 245, 0) 0%, rgba(255, 115, 63, 0.24) 100%);
     border-right: 4px solid #FF723F;
-
 }
 .profile-image{
     margin: 0 auto;
@@ -106,3 +105,4 @@ body{
     left: 59px;
     top: 593px;
 }
+
