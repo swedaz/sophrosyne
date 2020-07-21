@@ -17,7 +17,7 @@ export const loginUser = (userData, history) => (dispatch) => {
       setAuthorizationHeader(res.data.token);
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
-      history.push('/home');
+      history.push('/profile');
     })
     .catch((err) => {
       dispatch({
@@ -35,7 +35,7 @@ export const signupUser = (newUserData, history) => (dispatch) => {
       setAuthorizationHeader(res.data.token);
       dispatch(getUserData());
       dispatch({ type: CLEAR_ERRORS });
-      history.push('/home');
+      history.push('/profile');
     })
     .catch((err) => {
       dispatch({
@@ -109,6 +109,14 @@ export const sendMessage = (otherUser) => (dispatch) => {
 
 export const getMessages = (otherUser) => (dispatch) => {
   axios.post('/user/getMessages', otherUser)
+    .then((res) => {
+      dispatch(res);
+    })
+    .catch(err => console.log(err));
+}
+
+export const removeMatch = (user) => (dispatch) => {
+  axios.post('/user/unmatch', {user: user})
     .then((res) => {
       dispatch(res);
     })

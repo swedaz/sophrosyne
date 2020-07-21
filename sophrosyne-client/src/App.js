@@ -54,7 +54,7 @@ function App() {
           <Navbar/>
           <div className = "container">
           <Switch>
-            <Route exact path = "/home" component = {home}/>
+            <Route exact path = "/profile" component = {profile}/>
             <Route exact path = "/aboutUs" component = {aboutUs}/>
             <AuthRoute exact path = "/login" component = {login} />
             <AuthRoute exact path = "/signup" component = {signup} />

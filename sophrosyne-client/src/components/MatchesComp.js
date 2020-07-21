@@ -9,7 +9,8 @@ class Identity extends Component {
     constructor(props){
         super(props)
     }
-    renderMatch(match){
+
+    renderMatch(match, unMatch){
         return( 
             <div className = 'match-container'>
                 <div className = "image-format">
@@ -30,12 +31,12 @@ class Identity extends Component {
                 </div>
                 <div>
                     <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button" 
-                    component = {Link} to = {"/home/chat/" + match.id}>
+                    component = {Link} to = {"/profile/chat/" + match.id}>
                         Chat with me
                     </Button>
                 </div>
                 <div>
-                    <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button" >
+                    <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button" onClick = {() => unMatch(match.id)} >
                         Unmatch
                     </Button>
                 </div>
@@ -48,8 +49,8 @@ class Identity extends Component {
     render() {
         //console.log(this.props)
         //let testMatches = {results: [{id: "test1", bio: "bio1"}, {id: "test2", bio: "bio2"}]}
-        let matchDisplay = this.props.matches.results.map(this.renderMatch) 
-
+        let unMatch = this.props.onUnMatch;
+        let matchDisplay = this.props.matches.results.map(m => this.renderMatch(m, unMatch)); 
         return (
             <div >
                 {matchDisplay}
