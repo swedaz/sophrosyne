@@ -24,12 +24,11 @@ export class matches extends Component {
 
     render() {
 
-        let st = this.setState;
+        let st = this;
         function rm (user) {
             removeMatch(user)(res => {
                 getUsers()(s => {
-                    //console.log(s)
-                    st({matchResults: s.data})
+                    st.setState({matchResults: s.data})
                 })
             }
             )
