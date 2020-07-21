@@ -20,7 +20,7 @@ app.get('/user/search', FBAuth, getUsers);
 
 app.post('/user/chat', FBAuth, sendChat)
 app.post('/user/getMessages', FBAuth, getChat)
-app.post('/user/unmatch', unmatch)
+app.post('/user/unmatch', FBAuth, unmatch)
 
 
 

@@ -20,7 +20,6 @@ export class home extends Component {
                     <Grid item xs = {6}>
                         <Profile />
                     </Grid>
-                    <Image src = { hometransp }/>
                 </Grid>
             </div>
         )

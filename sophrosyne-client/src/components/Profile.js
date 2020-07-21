@@ -141,7 +141,7 @@ class Profile extends Component {
                 {identities && <Typography style={{fontFamily: "'Poppins', 'sans-serif'" , fontSize: '15px'}} variant = "body2">Identities: {identities + " "} </Typography>}
                 <hr/>
                   <Tooltip title= "Logout" placement= "top">
-                    <IconButton onClick = {this.handleLogout}>
+                    <IconButton onClick = {this.handleLogout} component = {Link} to = "/home">
                       <KeyboardReturn color="primary"/>
                     </IconButton>
                   </Tooltip>

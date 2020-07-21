@@ -331,12 +331,12 @@ exports.getChat = (req, res) => {
 
 exports.unmatch = (req, res) => {
   let unmatch = req.body.user
-  db.doc(`${req.user.handle}`).get()
+  db.doc(`/users/${req.user.handle}`).get()
   .then (userdoc  => {
     let unmatchedList = getUnmatchedList(userdoc)
     
     unmatchedList.push(unmatch)
-    db.doc(`${req.user.handle}`).update({
+    db.doc(`/users/${req.user.handle}`).update({
       unmatched: unmatchedList
     })
     
