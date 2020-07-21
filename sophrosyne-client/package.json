@@ -43,5 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5001/sophrosyne-project/us-central1/api"
+  "proxy": "http://us-central1-sophrosyne-project.cloudfunctions.net/api"
 }

@@ -58,11 +58,11 @@ function App() {
             <Route exact path = "/aboutUs" component = {aboutUs}/>
             <AuthRoute exact path = "/login" component = {login} />
             <AuthRoute exact path = "/signup" component = {signup} />
-            <Route exact path = "/home/survey" component = {survey} />
-            <Route exact path = "/home/matches" component = {matches} />
-            <Route exact path = "/home/chat/:user" component = {chat} />
-            <Route exact path = "/home/help" component = {help} />
-            <Route exact path = "/home/motivation" component = {motivation} />
+            <Route exact path = "/profile/survey" component = {survey} />
+            <Route exact path = "/profile/matches" component = {matches} />
+            <Route exact path = "/profile/chat/:user" component = {chat} />
+            <Route exact path = "/profile/help" component = {help} />
+            <Route exact path = "/profile/motivation" component = {motivation} />
             <Route path="*" component={home} />
           </Switch>
           </div>
