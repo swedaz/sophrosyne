@@ -12,6 +12,9 @@ class Identity extends Component {
 
     renderMatch(match, unMatch){
         return( 
+            <div className = 'matchcomp'>
+
+            
             <div className = 'match-container'>
                 <div className = "image-format">
                     <img src={match.imageUrl} className = "match-image"></img>
@@ -32,14 +35,14 @@ class Identity extends Component {
                 <div>
                     <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button" 
                     component = {Link} to = {"/profile/chat/" + match.id}>
-                        Chat with me
+                        Chat with me!
                     </Button>
-                </div>
-                <div>
-                    <Button style={{backgroundColor: '#fdce00', color: 'White'}} className = "chatMe-button" onClick = {() => unMatch(match.id)} >
+                    <Button style={{backgroundColor: '#FF723F', color: 'White', marginTop: '10px'}} className = "unmatch-button" onClick = {() => unMatch(match.id)} >
                         Unmatch
                     </Button>
                 </div>
+               
+            </div>
             </div>
     
         )

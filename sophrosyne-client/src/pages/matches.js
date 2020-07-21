@@ -37,8 +37,11 @@ export class matches extends Component {
 
         return (
             
-            <div className = "match-page">
-                <Profile/>
+            <div className = 'match-page' >
+                <div className = "profile">
+                    <Profile/>
+                </div>
+        
                 <Grid 
                 container
                 justify= "center"
@@ -47,7 +50,7 @@ export class matches extends Component {
                 style={{marginTop :'5%', marginLeft: '17%'}}>
                     <Grid item xs = {6} className = "match-section">
                         <h1> Meet your friends by taking our survey!</h1>
-                        <MatchesComp matches = {this.state.matchResults} onUnMatch = {rm}/>
+                        <MatchesComp matches = {this.state.matchResults} onUnMatch = {rm} />
                     </Grid>
                 </Grid>
             </div>

@@ -5,16 +5,16 @@ import Paper from '@material-ui/core/Paper';
 import hometransp from './home-transp.png'
 import { Image } from 'semantic-ui-react';
 
-import Profile from '../components/Profile'
+import Profile from '../components/Profile' 
 
 export class profile extends Component {
     render() {
         return (
-            <div className = "home">
+            <div className = "home"  >
                 <Grid container
                 justify= "center"
                 spacing = {10} 
-                flex-direction = 'row' 
+                flex-direction = 'row'
                 style={{marginTop :'10%'}}>
                     <Grid item xs = {6}>
                         <Profile />
