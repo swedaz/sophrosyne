@@ -9,6 +9,10 @@
     padding-left: 10px;
 }
 
+ul{
+    list-style-type: none;
+}
+
 .help2 {
     width: 2596px;
     height: 850px;
@@ -27,4 +31,9 @@
 
 li{
     font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.contactInfo{
+    color: rgb(114, 112, 112);
 }

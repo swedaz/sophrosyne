@@ -150,11 +150,11 @@ class Profile extends Component {
                         <EditDetails/>
                         </div>
                     </div>
-                    <div id = "ProfButtons" >
+                    <div style={{display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'center', color:'black'}} id = "ProfButtons" >
                       <Button id = "surveyButton"  component = {Link} to = "/profile/survey">Survey</Button>
                       <Button id = "MatchesButton" disabled = {!identities} component = {Link} to = "/profile/matches">Matches</Button>
-                      <Button id = "surveyButton2"  component = {Link} to = "/profile/motivation">Motivation</Button>
-                      <Button id = "MatchesButton2"  component = {Link} to = "/profile/help">Help</Button>
+                      <Button id = "MotivationButton"  component = {Link} to = "/profile/motivation">Motivation</Button>
+                      <Button id = "HelpButton"  component = {Link} to = "/profile/help">Help</Button>
                     </div>
                   </Grid>
                 </Grid>

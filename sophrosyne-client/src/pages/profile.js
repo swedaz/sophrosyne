@@ -15,7 +15,7 @@ export class profile extends Component {
                 justify= "center"
                 spacing = {10} 
                 flex-direction = 'row'
-                style={{marginTop :'10%'}}>
+                style={{ marginTop :'10%'}}>
                     <Grid item xs = {6}>
                         <Profile />
                     </Grid>

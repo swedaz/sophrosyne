@@ -8,9 +8,12 @@ import './help.css'
 import HelpT from './helpImg.png'
  
 import {Link} from 'react-router-dom'
+import { lightBlue } from '@material-ui/core/colors';
 
 const aboutStyle = {color: 'black', fontSize: '105px', fontFamily: 'Arial', display: 'flex', alignItems: 'center', textAlign: 'center'};
 const textStyle = {color: 'black', fontSize: '42px', fontFamily: 'Arial', display: 'flex', alignItems: 'center'};
+
+const spanStyle = {color: lightBlue}
 
 class help extends Component {
     
@@ -22,12 +25,12 @@ class help extends Component {
                 </div>
                 <div className = 'help2'>
                 <h1 style= {{aboutStyle, marginTop: '50px'}}>United States </h1>
-                    <ul>
-                        <li>Emergency: 911</li>
-                        <li>National Domestic Violence Hotline: 1- 800-799-7233</li>
+                    <ul id ='usHelp'>
+                        <li>Emergency: <span className= 'contactInfo'>911</span></li>
+                        <li>National Domestic Violence Hotline: <span className= 'contactInfo'>1- 800-799-7233</span></li>
                         <li>
                             <a href="http://www.suicidepreventionlifeline.org">National Suicide Prevention Lifeline</a>
-                            : 1-800-273-TALK (8255)
+                            <span className= 'contactInfo'>: 1-800-273-TALK (8255)</span>
                         </li>
                         <li>
                             <a href="http://www.suicide.org">Suicide Prevention, Awareness, and Support</a>
@@ -35,18 +38,18 @@ class help extends Component {
                         <li>
                             <a href="https://www.contact-usa.org/chat.html">Lifeline Crisis Chat</a>
                         </li>
-                        <li>Crisis Text Line: Text REASON to 741741 (free, confidential and 24/7)</li>
-                        <li>Self-Harm Hotline: 1-800-DONT CUT (1-800-366-8288)</li>
-                        <li>Family Violence Helpline: 1-800-996-6228</li>
-                        <li>Planned Parenthood Hotline: 1-800-230-PLAN (7526)</li>
-                        <li>American Association of Poison Control Centers: 1-800-222-1222</li>
-                        <li>National Council on Alcoholism and Drug Dependency: 1-800-622-2255</li>
-                        <li>GLBT Hotline: 1-888-843-4564</li>
-                        <li>The Trevor Project: 1-866-488-7386 or text “START” to 678678. </li>
+                        <li>Crisis Text Line: <span className= 'contactInfo'>Text REASON to 741741 (free, confidential and 24/7)</span></li>
+                        <li>Self-Harm Hotline: <span className= 'contactInfo'>1-800-DONT CUT (1-800-366-8288)</span></li>
+                        <li>Family Violence Helpline: <span className= 'contactInfo'>1-800-996-6228</span></li>
+                        <li>Planned Parenthood Hotline: <span className= 'contactInfo'>1-800-230-PLAN (7526)</span></li>
+                        <li>American Association of Poison Control Centers: <span className= 'contactInfo'>1-800-222-1222</span></li>
+                        <li>National Council on Alcoholism and Drug Dependency: <span className= 'contactInfo'>1-800-622-2255</span></li>
+                        <li>GLBT Hotline: <span className= 'contactInfo'>1-888-843-4564</span></li>
+                        <li>The Trevor Project: <span className= 'contactInfo'>1-866-488-7386 or text “START” to 678678.</span> </li>
                         <li>
                             <a href="https://www.veteranscrisisline.net">Veterans Crisis Line: </a>
                         </li>
-                        <li>Trans LifeLine (also available in Spanish) Our Hotline: 877-565-8860 </li>
+                        <li>Trans LifeLine (also available in Spanish) Our Hotline: <span className= 'contactInfo'>877-565-8860 </span></li>
                     </ul>  
                 <h1 style= {{aboutStyle, marginTop: '50px'}}>‘Find a Therapist’ Online Directories</h1>
                     <ul>
@@ -65,8 +68,8 @@ class help extends Component {
                     </ul>
                 <h1 style= {{aboutStyle, marginTop: '50px'}}>Canada</h1>
                     <ul>
-                        <li>Emergency: 911</li>
-                        <li>Hotline: 1-888-353-2273</li>
+                        <li>Emergency: <span className= 'contactInfo'>911</span></li>
+                        <li>Hotline:<span className= 'contactInfo'>1-888-353-2273</span> </li>
                         <li>
                                 <a href="http://www.yourlifecounts.org/need-help/crisis-lines">YourLifeCounts.org</a>
                         </li>
